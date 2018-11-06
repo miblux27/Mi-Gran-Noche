@@ -94,6 +94,8 @@ public class CharacterController2D : MonoBehaviour {
         {
             rgbd.velocity = VectorDeSalto();
         }
+        
+        // hola
     }
 
     private Vector2 VectorDeSalto()
