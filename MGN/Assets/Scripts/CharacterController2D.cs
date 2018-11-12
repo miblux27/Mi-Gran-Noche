@@ -8,25 +8,33 @@ public class CharacterController2D : MonoBehaviour {
     public float jumpForce;
     public int extraJumps = 0;
 
-    private Animator animator;
-
-    private int saltosActuales;
-    private bool mirandoDerecha = true;
-    private float moveInput;
-
-    private Rigidbody2D rgbd;
-
-    private bool isGrounded;
-    private static bool ralentizar = false;
-    private const float bajarVelovidad = 0.4f;
     public Transform groundCheck;
     public float checkRadius;
     public LayerMask whatIsGround;
+
+    private Animator animator;
+    private int saltosActuales;
+    private bool mirandoDerecha = true;
+    private float moveInput;
+    private Rigidbody2D rgbd;
+    private float time = 4f;
+    private float dashTime;
+
+    private bool isGrounded;
+    private bool dashActivado = false;
+    private static bool ralentizar = false;
+    private const float bajarVelovidad = 0.4f;
+    private const float dashSpeed = 10f;
+    private const float dashLimit = 2f;
+    private const float cooldownTime = 4f;
+
+
 
     // Use this for initialization
 
     void Start()
     {
+        dashTime = dashLimit;
         rgbd = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
     }
@@ -40,26 +48,47 @@ public class CharacterController2D : MonoBehaviour {
         if (collision.GetComponent<Collider2D>().CompareTag("EnemigoGrupo")) ralentizar = false;
     }
 
-    // Update is called once per frame
-    void FixedUpdate()
-    {
-        Mover();
-    }
-
     private void Update()
     {
+        time += Time.deltaTime;
+        Mover();
         Saltar();
     }
 
     private void Mover()
     {
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, checkRadius, whatIsGround);
-
         moveInput = Input.GetAxis("Horizontal");
-        rgbd.velocity = (ralentizar) ? new Vector2(moveInput * speed* bajarVelovidad, rgbd.velocity.y): new Vector2(moveInput * speed, rgbd.velocity.y);
 
-        if (rgbd.velocity.x != 0) animator.SetFloat("speed", 1f);
-        else animator.SetFloat("speed", -1f);
+        if (Input.GetKeyDown(KeyCode.LeftControl) && time > cooldownTime)
+        {
+            //tumbar collider, para pasar por debajo del enemigo || Habilitar\Deshabilitar colliders necesarios.
+            time = 0;
+            dashActivado = true;
+        }
+        else if (Input.GetKeyUp(KeyCode.LeftControl))
+        {
+            dashTime = dashLimit;
+            dashActivado = false;
+        }
+        else if (dashActivado)
+        {
+            dashTime -= Time.deltaTime;
+            if (time < dashLimit)
+            {
+                rgbd.velocity = new Vector2(moveInput * dashSpeed * (float)(dashTime / dashLimit), rgbd.velocity.y);
+            }
+            else
+            {
+                rgbd.velocity = new Vector2(0, rgbd.velocity.y);
+            }
+        }
+        else
+        {
+            rgbd.velocity = (ralentizar) ? new Vector2(moveInput * speed * bajarVelovidad, rgbd.velocity.y) : new Vector2(moveInput * speed, rgbd.velocity.y);
+        }
+
+        animator.SetFloat("speed", (rgbd.velocity.x != 0) ? 1f : -1f);
 
         if (!mirandoDerecha && moveInput > 0)
         {
@@ -94,8 +123,6 @@ public class CharacterController2D : MonoBehaviour {
         {
             rgbd.velocity = VectorDeSalto();
         }
-        
-        // hola
     }
 
     private Vector2 VectorDeSalto()
