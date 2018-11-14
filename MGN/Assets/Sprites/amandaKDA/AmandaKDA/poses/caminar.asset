@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae0543fe805424df99fe08ce744cbe49, type: 3}
+  m_Name: caminar
+  m_EditorClassIdentifier: 
+  m_PoseEntries:
+  - path: Bones/cadera
+    localPosition: {x: 1.6854771, y: -5.1905336, z: 0.021484382}
+    localRotation: {x: 0, y: 0, z: 0.7065712, w: 0.707642}
+    localScale: {x: 1.3000002, y: 3.430001, z: 1}
+  - path: Bones/cadera/brazo der
+    localPosition: {x: 3.607461, y: 0.27984312, z: -0.09375}
+    localRotation: {x: 0, y: 0, z: -0.99976885, w: 0.021499483}
+    localScale: {x: 0.76807475, y: 0.29270142, z: 1}
+  - path: Bones/cadera/brazo der/codo
+    localPosition: {x: 2.5236876, y: 0.00000023841858, z: 0}
+    localRotation: {x: 0, y: 0, z: 0.45555386, w: 0.89020824}
+    localScale: {x: 1.87, y: 1, z: 1}
+  - path: Bones/cadera/brazo der/codo/mano
+    localPosition: {x: 1.2655903, y: 0.031865895, z: 0}
+    localRotation: {x: -0, y: -0, z: 0.19985422, w: 0.97982574}
+    localScale: {x: 0.17, y: 1, z: 1}
+  - path: Bones/cadera/brazo izq
+    localPosition: {x: 3.6460516, y: -0.30052826, z: 0}
+    localRotation: {x: 0, y: -0, z: 0.9998647, w: -0.01645266}
+    localScale: {x: 1.1342336, y: 0.39357954, z: 1}
+  - path: Bones/cadera/cabeza
+    localPosition: {x: 4.7725406, y: -0.078895114, z: -0.09375}
+    localRotation: {x: -0, y: -0, z: 0.010871142, w: 0.999941}
+    localScale: {x: 2.2762547, y: 1.8089797, z: 1}
+  - path: Bones/cadera/pierna der
+    localPosition: {x: -1.2908361, y: 0.2083671, z: -0.08203125}
+    localRotation: {x: 0, y: 0, z: 0.99992454, w: -0.012285682}
+    localScale: {x: 1.36, y: 0.7692297, z: 1}
+  - path: Bones/cadera/pierna der/rodilla
+    localPosition: {x: 0.97663605, y: -0.02140886, z: 0}
+    localRotation: {x: 0, y: 0, z: -0.13546483, w: 0.99078214}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Bones/cadera/pierna der/rodilla/pie
+    localPosition: {x: 1.3639458, y: 0.00000018626451, z: 0}
+    localRotation: {x: -0, y: -0, z: -0.79996943, w: -0.60004085}
+    localScale: {x: 0.46, y: 1, z: 1}
+  - path: Bones/cadera/pierna izq
+    localPosition: {x: -1.0784408, y: -0.14586475, z: -0.08203125}
+    localRotation: {x: 0, y: 0, z: 0.9973897, w: -0.07220755}
+    localScale: {x: 1.3610692, y: 0.78308994, z: 1}
+  - path: Bones/cadera/pierna izq/rodilla
+    localPosition: {x: 1.0042679, y: -0.003946381, z: 0}
+    localRotation: {x: 0, y: 0, z: -0.14884922, w: 0.9888599}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Bones/cadera/pierna izq/rodilla/pie
+    localPosition: {x: 1.2914053, y: 0.00000006402843, z: 0}
+    localRotation: {x: -0, y: -0, z: 0.7606897, w: 0.6491158}
+    localScale: {x: 0.46, y: 1, z: 1}

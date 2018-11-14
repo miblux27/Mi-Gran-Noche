@@ -1,0 +1,246 @@
+fileFormatVersion: 2
+guid: 1bf14075dbb435c4d9dc083e9aa2cebc
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: amandaKDA_0
+    21300002: amandaKDA_1
+    21300004: amandaKDA_2
+    21300006: amandaKDA_3
+    21300008: amandaKDA_4
+    21300010: amandaKDA_5
+    21300012: amandaKDA_6
+  externalObjects: {}
+  serializedVersion: 7
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: amandaKDA_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1156.9177
+        width: 793.0959
+        height: 899.8613
+      alignment: 9
+      pivot: {x: 0.49678728, y: 0.49961287}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9306da99464459f49b4f5d0bd7320ce5
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: amandaKDA_1
+      rect:
+        serializedVersion: 2
+        x: 126.647964
+        y: 759.0149
+        width: 114.689575
+        height: 435.8047
+      alignment: 9
+      pivot: {x: 0.5000632, y: 0.496748}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4aeb747c93495ad42807028eaeb77069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: amandaKDA_2
+      rect:
+        serializedVersion: 2
+        x: 713.78235
+        y: 806.66034
+        width: 263.6709
+        height: 404.59906
+      alignment: 9
+      pivot: {x: 0.499553, y: 0.49886337}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09f5fc389b6174547b5a3ce12516cc10
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: amandaKDA_3
+      rect:
+        serializedVersion: 2
+        x: 876.139
+        y: 1166.9105
+        width: 793.861
+        height: 894.0895
+      alignment: 9
+      pivot: {x: 0.50369143, y: 0.5028462}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74766b6aacddc6044a3f399e9dc0d107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: amandaKDA_4
+      rect:
+        serializedVersion: 2
+        x: 174.34297
+        y: 37.151257
+        width: 221.39244
+        height: 505.2622
+      alignment: 9
+      pivot: {x: 0.3093566, y: 0.15381393}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da6c343b047103340af20f07707ce3df
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: amandaKDA_5
+      rect:
+        serializedVersion: 2
+        x: 339.25558
+        y: 366.7536
+        width: 332.1218
+        height: 771.01276
+      alignment: 9
+      pivot: {x: 0.4975416, y: 0.49966276}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b005ae12e2a01f4bafd68ea59cdc8cf
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: amandaKDA_6
+      rect:
+        serializedVersion: 2
+        x: 757.0005
+        y: 0
+        width: 220.3858
+        height: 497.15674
+      alignment: 9
+      pivot: {x: 0.26296657, y: 0.20068702}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35f4813a2be3a3f4dbe70bc092d4fcbb
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 6bb7e4942f9220a49bea0109bbb7232e
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 636778082309421747
+  assetBundleName: 
+  assetBundleVariant: 
