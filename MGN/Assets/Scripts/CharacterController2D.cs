@@ -12,6 +12,7 @@ public class CharacterController2D : MonoBehaviour
     public Transform groundCheck;
     public float checkRadius;
     public LayerMask whatIsGround;
+    public int bebidaA;
 
     private Animator animator;
     private int saltosActuales;
@@ -20,6 +21,7 @@ public class CharacterController2D : MonoBehaviour
     private Rigidbody2D rgbd;
     private float time = 4f;
     private float dashTime;
+    private bool barra;
 
     private bool isGrounded;
     private bool dashActivado = false;
@@ -43,10 +45,12 @@ public class CharacterController2D : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.GetComponent<Collider2D>().CompareTag("EnemigoGrupo")) ralentizar = true;
+        if (collision.GetComponent<Collider2D>().CompareTag("Barra")) barra = true;
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.GetComponent<Collider2D>().CompareTag("EnemigoGrupo")) ralentizar = false;
+        if (collision.GetComponent<Collider2D>().CompareTag("Barra")) barra = false;
     }
 
     private void Update()
@@ -54,6 +58,7 @@ public class CharacterController2D : MonoBehaviour
         time += Time.deltaTime;
         Mover();
         Saltar();
+        cogerBebidaA();
     }
 
     private void Mover()
@@ -125,6 +130,14 @@ public class CharacterController2D : MonoBehaviour
             rgbd.velocity = VectorDeSalto();
             saltosActuales--;
             Debug.Log("Saltos actuales = " + saltosActuales);
+        }
+    }
+
+    private void cogerBebidaA()
+    {
+        if (barra && Input.GetKeyDown(KeyCode.E) && bebidaA < 3)
+        {
+                bebidaA++;
         }
     }
 
