@@ -44,18 +44,12 @@ public class CharacterController2D : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.GetComponent<Collider2D>().CompareTag("EnemigoGrupo")) {
-            ralentizar = true;
-            animator.SetBool("ralentizado", ralentizar);
-        }
+        if (collision.GetComponent<Collider2D>().CompareTag("EnemigoGrupo")) ralentizar = true;
         if (collision.GetComponent<Collider2D>().CompareTag("Barra")) barra = true;
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.GetComponent<Collider2D>().CompareTag("EnemigoGrupo")) {
-            ralentizar = false;
-            animator.SetBool("ralentizado", ralentizar);
-        }
+        if (collision.GetComponent<Collider2D>().CompareTag("EnemigoGrupo")) ralentizar = false;
         if (collision.GetComponent<Collider2D>().CompareTag("Barra")) barra = false;
     }
 
@@ -70,7 +64,6 @@ public class CharacterController2D : MonoBehaviour
     private void Mover()
     {
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, checkRadius, whatIsGround);
-        animator.SetBool("ground", isGrounded);
         moveInput = Input.GetAxis("Horizontal");
 
         if (Input.GetKeyDown(KeyCode.LeftControl) && time > cooldownTime)
@@ -102,7 +95,6 @@ public class CharacterController2D : MonoBehaviour
         }
 
         animator.SetFloat("speed", (rgbd.velocity.x != 0) ? 1f : -1f);
-        animator.SetFloat("Yspeed", (rgbd.velocity.y < 0) ? -1f : 1f);
 
         if (!mirandoDerecha && moveInput > 0)
         {
