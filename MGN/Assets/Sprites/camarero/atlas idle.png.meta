@@ -15,6 +15,19 @@ TextureImporter:
     21300020: atlas idle_21
     21300022: atlas idle_22
     21300024: atlas idle_25
+    21300026: atlas idle_0
+    21300028: atlas idle_2
+    21300030: atlas idle_4
+    21300032: atlas idle_6
+    21300034: atlas idle_8
+    21300036: atlas idle_10
+    21300038: atlas idle_12
+    21300040: atlas idle_14
+    21300042: atlas idle_16
+    21300044: atlas idle_18
+    21300046: atlas idle_20
+    21300048: atlas idle_23
+    21300050: atlas idle_24
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -105,13 +118,13 @@ TextureImporter:
         width: 311
         height: 581
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4a92114356ee0c94f8b4961a826c1188
+      spriteID: da1b0e49a379b8c4b87d57625642fd26
       vertices: []
       indices: 
       edges: []
@@ -125,13 +138,13 @@ TextureImporter:
         width: 311
         height: 581
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8015fa8cfd8db964dbbd8eefdf7a450d
+      spriteID: 6453f63c53f15074f9591bd953f30ec1
       vertices: []
       indices: 
       edges: []
@@ -145,13 +158,13 @@ TextureImporter:
         width: 310
         height: 581
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 133ca3eb2379a1f4ca51186fbd462ec6
+      spriteID: d076c28914883334bb6c15f8fd9a1603
       vertices: []
       indices: 
       edges: []
@@ -165,13 +178,13 @@ TextureImporter:
         width: 310
         height: 581
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1cd952a2b787077459db6268fafba549
+      spriteID: 24775861a24b1b94b814bf4d438c6aaf
       vertices: []
       indices: 
       edges: []
@@ -181,17 +194,17 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 47
-        y: 1267
-        width: 310
-        height: 579
+        y: 1266
+        width: 311
+        height: 580
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bf8c4bfad58ec8c41b635762454e5370
+      spriteID: 048156b925e9a7c418a8c0c522e69cfd
       vertices: []
       indices: 
       edges: []
@@ -201,17 +214,17 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 539
-        y: 1267
-        width: 310
-        height: 579
+        y: 1266
+        width: 311
+        height: 580
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c040832020cdfa844b72ed5c20d2adad
+      spriteID: 029077595d7d49146880336ef4f43ae3
       vertices: []
       indices: 
       edges: []
@@ -221,17 +234,17 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1003
-        y: 1267
-        width: 310
-        height: 579
+        y: 1266
+        width: 311
+        height: 580
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0885ab9e2feb6aa40be0f89bb3f24554
+      spriteID: fe5a94f7276ebd941b512b79204c9b6b
       vertices: []
       indices: 
       edges: []
@@ -241,17 +254,17 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1516
-        y: 1267
+        y: 1266
         width: 310
-        height: 579
+        height: 580
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2fb45bc5240f50f4b8d16a878b302fb3
+      spriteID: 5300cdfd8ef9e804a9aff8b0b62078fb
       vertices: []
       indices: 
       edges: []
@@ -261,17 +274,37 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 47
-        y: 662
-        width: 310
+        y: 652
+        width: 311
         height: 580
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f60d36e30939bf045b9d3ddb73584433
+      spriteID: 81d089f1c2b33404e968d60d53c342c4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas idle_18
+      rect:
+        serializedVersion: 2
+        x: 539
+        y: 652
+        width: 310
+        height: 580
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3c47c78f6114e642b6dde962eb41f2d
       vertices: []
       indices: 
       edges: []
@@ -280,44 +313,24 @@ TextureImporter:
       name: atlas idle_19
       rect:
         serializedVersion: 2
-        x: 539
-        y: 662
-        width: 310
-        height: 580
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7e437e5f1c0c38a4e8f413cb7718d8f6
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: atlas idle_21
-      rect:
-        serializedVersion: 2
         x: 1003
-        y: 662
+        y: 652
         width: 311
         height: 580
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d372a60c7be588f45a8ad72f8bb14306
+      spriteID: 13d34102a6277a442a9cdf897d549d3a
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: atlas idle_22
+      name: atlas idle_20
       rect:
         serializedVersion: 2
         x: 1516
@@ -325,13 +338,13 @@ TextureImporter:
         width: 310
         height: 580
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 905019d585411da47aec016b0b2e374c
+      spriteID: 83e9eb2d267b6164e98d34ae24fea9a8
       vertices: []
       indices: 
       edges: []
@@ -345,13 +358,13 @@ TextureImporter:
         width: 311
         height: 581
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6624fa23e1e2b35418bca430ee82b47c
+      spriteID: f2db3878470e8ae419ce3b0fe2ec9ef7
       vertices: []
       indices: 
       edges: []

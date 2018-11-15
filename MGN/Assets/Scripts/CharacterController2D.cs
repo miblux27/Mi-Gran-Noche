@@ -19,6 +19,7 @@ public class CharacterController2D : MonoBehaviour
     private bool mirandoDerecha = true;
     private float moveInput;
     private Rigidbody2D rgbd;
+    private Collider2D[] colliders;
     private float time = 4f;
     private float dashTime;
     private bool barra;
@@ -40,6 +41,7 @@ public class CharacterController2D : MonoBehaviour
         dashTime = dashLimit;
         rgbd = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        colliders = GetComponents<Collider2D>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -78,11 +80,17 @@ public class CharacterController2D : MonoBehaviour
             //tumbar collider, para pasar por debajo del enemigo || Habilitar\Deshabilitar colliders necesarios.
             time = 0;
             dashActivado = true;
+            animator.SetBool("slided", dashActivado);
+            colliders[1].enabled = dashActivado;
+            colliders[0].enabled = !dashActivado;
         }
         else if (Input.GetKeyUp(KeyCode.LeftControl))
         {
             dashTime = dashLimit;
             dashActivado = false;
+            animator.SetBool("slided", dashActivado);
+            colliders[1].enabled = dashActivado;
+            colliders[0].enabled = !dashActivado;
         }
         else if (dashActivado)
         {
