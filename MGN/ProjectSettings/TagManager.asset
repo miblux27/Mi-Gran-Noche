@@ -8,6 +8,8 @@ TagManager:
   - Barra
   - Cliente
   - Punto
+  - maxRange
+  - minRange
   layers:
   - Default
   - TransparentFX
