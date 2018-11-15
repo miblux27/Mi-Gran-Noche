@@ -24,7 +24,6 @@ GameObject:
   - component: {fileID: 50887769996522944}
   - component: {fileID: 114110924075650704}
   - component: {fileID: 95221089380962312}
-  - component: {fileID: 70325505243659778}
   m_Layer: 9
   m_Name: Player
   m_TagString: Player
@@ -68,7 +67,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1708644586911268}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.165, y: -1.039, z: 0}
+  m_LocalPosition: {x: 0, y: -0.974, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4042343872213772}
@@ -94,21 +93,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!70 &70325505243659778
-CapsuleCollider2D:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1499246332806730}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.03199326, y: -0.8671434}
-  m_Size: {x: 1.373845, y: 0.4326623}
-  m_Direction: 1
 --- !u!70 &70528973215444066
 CapsuleCollider2D:
   m_ObjectHideFlags: 1
@@ -161,7 +145,6 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 256
-  bebidaA: 0
 --- !u!212 &212344157392009478
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -196,7 +179,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 4
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300004, guid: 34ef73e4cfaf2114c98c877021d3d43e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
