@@ -15,35 +15,17 @@ public class DispensadorController : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.GetComponent<Collider2D>().CompareTag("Player"))
+        if (collision.GetComponent<Collider2D>().CompareTag("Player") && !encendido)
         { 
-            if(!encendido)
-            {
-                //Cambiar animación Encendido
-
-                //Indicar que esa animación ya esta siendo ejecutada
-                encendido = true;
-            }
-            if(Input.GetKeyDown(KeyCode.E))
-            {
-                //Abrir menú de bebidas
-                Debug.Log("Menú de Refrescos");
-            }
-            
+            encendido = true;    
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
         
-        if (collision.GetComponent<Collider2D>().CompareTag("Player"))
+        if (collision.GetComponent<Collider2D>().CompareTag("Player") && encendido)
         {
-            if(encendido)
-            {
-                //Cambiar animación Apagado
-                
-                //Indicar que esa animación ya esta siendo ejecutada
-                encendido = false;
-            }    
+            encendido = false;  
         }
     }
 }

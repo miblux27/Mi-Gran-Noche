@@ -8,30 +8,29 @@ public class CharacterController2D : MonoBehaviour
     public float speed;
     public float jumpForce;
     public int extraJumps = 0;
+    public bool ralentizar = false;
 
     public Transform groundCheck;
     public float checkRadius;
     public LayerMask whatIsGround;
-    public int bebidaA;
 
     private Animator animator;
     private int saltosActuales;
-    private bool mirandoDerecha = true;
+
     private float moveInput;
     private Rigidbody2D rgbd;
+    private Collider2D[] colliders;
     private float time = 4f;
     private float dashTime;
-    private bool barra;
 
+    private bool mirandoDerecha = true;
     private bool isGrounded;
     private bool dashActivado = false;
-    private static bool ralentizar = false;
+
     private const float bajarVelovidad = 0.4f;
     private const float dashSpeed = 10f;
     private const float dashLimit = 2f;
     private const float cooldownTime = 4f;
-
-
 
     // Use this for initialization
 
@@ -40,25 +39,15 @@ public class CharacterController2D : MonoBehaviour
         dashTime = dashLimit;
         rgbd = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.GetComponent<Collider2D>().CompareTag("EnemigoGrupo")) ralentizar = true;
-        if (collision.GetComponent<Collider2D>().CompareTag("Barra")) barra = true;
-    }
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.GetComponent<Collider2D>().CompareTag("EnemigoGrupo")) ralentizar = false;
-        if (collision.GetComponent<Collider2D>().CompareTag("Barra")) barra = false;
+        colliders = GetComponents<Collider2D>();
     }
 
     private void Update()
     {
         time += Time.deltaTime;
+
         Mover();
         Saltar();
-        cogerBebidaA();
     }
 
     private void Mover()
@@ -71,11 +60,17 @@ public class CharacterController2D : MonoBehaviour
             //tumbar collider, para pasar por debajo del enemigo || Habilitar\Deshabilitar colliders necesarios.
             time = 0;
             dashActivado = true;
+            animator.SetBool("slided", dashActivado);
+            colliders[0].enabled = !dashActivado;
+            colliders[1].enabled = dashActivado;
         }
         else if (Input.GetKeyUp(KeyCode.LeftControl))
         {
             dashTime = dashLimit;
             dashActivado = false;
+            animator.SetBool("slided", dashActivado);
+            colliders[0].enabled = !dashActivado;
+            colliders[1].enabled = dashActivado;
         }
         else if (dashActivado)
         {
@@ -130,14 +125,6 @@ public class CharacterController2D : MonoBehaviour
             rgbd.velocity = VectorDeSalto();
             saltosActuales--;
             Debug.Log("Saltos actuales = " + saltosActuales);
-        }
-    }
-
-    private void cogerBebidaA()
-    {
-        if (barra && Input.GetKeyDown(KeyCode.E) && bebidaA < 3)
-        {
-                bebidaA++;
         }
     }
 

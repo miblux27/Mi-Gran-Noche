@@ -23,6 +23,8 @@ GameObject:
   - component: {fileID: 70528973215444066}
   - component: {fileID: 50887769996522944}
   - component: {fileID: 114110924075650704}
+  - component: {fileID: 114181149280524346}
+  - component: {fileID: 114583090652334740}
   - component: {fileID: 95221089380962312}
   m_Layer: 9
   m_Name: Player
@@ -140,11 +142,36 @@ MonoBehaviour:
   speed: 5
   jumpForce: 10
   extraJumps: 1
+  ralentizar: 0
   groundCheck: {fileID: 4997475895296190}
   checkRadius: 0.1
   whatIsGround:
     serializedVersion: 2
     m_Bits: 256
+--- !u!114 &114181149280524346
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1499246332806730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77c78ac13f6071a4db9b73439fb610bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  character: {fileID: 114110924075650704}
+--- !u!114 &114583090652334740
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1499246332806730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23737ca875e90be47a8a5767b71aeed4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bebidaA: 0
 --- !u!212 &212344157392009478
 SpriteRenderer:
   m_ObjectHideFlags: 1
