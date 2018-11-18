@@ -13,8 +13,6 @@ public class MovimientoCliente : MonoBehaviour {
 	public float tiempoPedir;
 	public float tiempoIdle;
 	private int rebota = 1;
-	private Random random = new Random();
-	private int pasarIDLE;
 	private Animator animator;
 	private bool mirandoDerecha = true;
 
@@ -82,13 +80,13 @@ public class MovimientoCliente : MonoBehaviour {
 		auxVelocidad = velocidad;
 		Debug.Log(auxVelocidad);
 		animator = GetComponent<Animator>();
+		InvokeRepeating("pedir", pedirRate, pedirRate);
+		InvokeRepeating("idle", idleRate, idleRate);
 		
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
 		Mover();
-		InvokeRepeating("pedir", pedirRate, pedirRate);
-		InvokeRepeating("idle", idleRate, idleRate);
 	}
 }
