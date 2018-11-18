@@ -17,31 +17,34 @@ public class CharacterController2D : MonoBehaviour
     public float checkRadius;
     public LayerMask whatIsGround;
 
-    private Animator animator;
     private int saltosActuales;
-
     private float moveInput;
+    private float slideTime;
+
     private Rigidbody2D rgbd;
     private Collider2D[] colliders;
+    private Animator animator;
+    private ParticleSystem particle;
 
     private bool mirandoDerecha = true;
     private bool isGrounded;
-    private bool dashActivado = false;
+    private bool slideActivado = false;
 
     private const float bajarVelovidad = 0.4f;
-    private const float dashSpeed = 10f;
-    private const float dashLimit = 2f;
-    private float dashTime;
-    
+    private const float slideSpeed = 10f;
+    private const float slideLimit = 2f;
+
 
     // Use this for initialization
 
     void Start()
     {
-        dashTime = dashLimit;
+        slideTime = slideLimit;
         rgbd = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         colliders = GetComponents<Collider2D>();
+        particle = gameObject.GetComponentInChildren<ParticleSystem>();
+        particle.Stop();
     }
 
     private void Update()
@@ -49,7 +52,7 @@ public class CharacterController2D : MonoBehaviour
         time += Time.deltaTime;
 
         Mover();
-        Saltar();
+        if(!GameManager.juegoEnPausa) Saltar();
     }
 
     private void Mover()
@@ -61,29 +64,32 @@ public class CharacterController2D : MonoBehaviour
         {
             //tumbar collider, para pasar por debajo del enemigo || Habilitar\Deshabilitar colliders necesarios.
             time = 0;
-            dashActivado = true;
-            animator.SetBool("slided", dashActivado);
-            colliders[0].enabled = !dashActivado;
-            colliders[1].enabled = dashActivado;
+            slideActivado = true;
+            animator.SetBool("slided", slideActivado);
+            colliders[0].enabled = !slideActivado;
+            colliders[1].enabled = slideActivado;
+            particle.Play();
         }
         else if (Input.GetKeyUp(KeyCode.LeftControl))
         {
-            dashTime = dashLimit;
-            dashActivado = false;
-            animator.SetBool("slided", dashActivado);
-            colliders[0].enabled = !dashActivado;
-            colliders[1].enabled = dashActivado;
+            slideTime = slideLimit;
+            slideActivado = false;
+            animator.SetBool("slided", slideActivado);
+            colliders[0].enabled = !slideActivado;
+            colliders[1].enabled = slideActivado;
+            particle.Stop();
         }
-        else if (dashActivado)
+        else if (slideActivado)
         {
-            dashTime -= Time.deltaTime;
-            if (time < dashLimit)
+            slideTime -= Time.deltaTime;
+            if (time < slideLimit)
             {
-                rgbd.velocity = new Vector2(moveInput * dashSpeed * (float)(dashTime / dashLimit), rgbd.velocity.y);
+                rgbd.velocity = new Vector2(moveInput * slideSpeed * (float)(slideTime / slideLimit), rgbd.velocity.y);
             }
             else
             {
                 rgbd.velocity = new Vector2(0, rgbd.velocity.y);
+                particle.Stop();
             }
         }
         else
