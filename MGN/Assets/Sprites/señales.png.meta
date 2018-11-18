@@ -1,9 +1,7 @@
 fileFormatVersion: 2
-guid: 2a312105e830aab4693e58032ba70ad9
+guid: 2c12df6974fb5104384fd1c1ab508ac1
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: plataformaLampara1_0
-    21300002: plataformaLampara1_1
+  fileIDToRecycleName: {}
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -42,12 +40,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 9
-  spritePivot: {x: 0.5, y: 0.725}
-  spritePixelsToUnits: 300
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -71,64 +69,13 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
-    buildTarget: Standalone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: plataformaLampara1_0
-      rect:
-        serializedVersion: 2
-        x: 188
-        y: 0
-        width: 1208
-        height: 1724
-      alignment: 9
-      pivot: {x: 0.48051932, y: 0.9606166}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5ab1bb08f54666b48a08c2af7a888931
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: plataformaLampara1_1
-      rect:
-        serializedVersion: 2
-        x: 747
-        y: 1724
-        width: 67
-        height: 561
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a237b65e829fb6747adceb852b34fe7c
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 44e2f99b909250847bcccdbe23cf87fe
+    spriteID: 85c85e19224efa7409582e85046f7bd6
     vertices: []
     indices: 
     edges: []
