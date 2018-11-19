@@ -5,7 +5,9 @@ using UnityEngine;
 public class ActivarMenuObjeto : MonoBehaviour
 {
     public GameObject barra;
-    public void ActivarMenu()
+
+    //Provisionalmente comentado
+    /* public void ActivarMenu()
     {
         barra.SetActive(true);
         GameManager.juegoEnPausa = true;
@@ -16,5 +18,5 @@ public class ActivarMenuObjeto : MonoBehaviour
         barra.SetActive(false);
         GameManager.juegoEnPausa = false;
         Time.timeScale = 1f; 
-    }
+    } */
 }

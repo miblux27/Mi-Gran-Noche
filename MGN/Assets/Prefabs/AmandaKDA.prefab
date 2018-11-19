@@ -767,7 +767,7 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.6081581, y: -0.17887473}
@@ -1227,10 +1227,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocidad: 2
-  pedirRate: 30
-  idleRate: 10
+  pedirRate: 10
+  idleRate: 100
   tiempoPedir: 5
   tiempoIdle: 5
+  antendido: 0
+  "se\xF1al": {fileID: 1672891186384020, guid: 22f8a264ab9264f4aafaca625ee0882a, type: 2}
 --- !u!114 &114956938974197168
 MonoBehaviour:
   m_ObjectHideFlags: 1

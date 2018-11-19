@@ -11,7 +11,6 @@ public class CharacterController2D : MonoBehaviour
     public bool ralentizar = false;
     public static float time = 4f;
     public const float cooldownTime = 4f;
-    
 
     public Transform groundCheck;
     public float checkRadius;

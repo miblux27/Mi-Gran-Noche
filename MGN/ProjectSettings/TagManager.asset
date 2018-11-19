@@ -8,6 +8,7 @@ TagManager:
   - Barra
   - Cliente
   - Punto
+  - "Se\xF1al"
   layers:
   - Default
   - TransparentFX
