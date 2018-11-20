@@ -57,6 +57,10 @@ public class CharacterController2D : MonoBehaviour
     private void Mover()
     {
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, checkRadius, whatIsGround);
+
+        if (isGrounded) animator.SetBool("grounded", true);
+        else animator.SetBool("grounded", false);
+
         moveInput = Input.GetAxis("Horizontal");
 
         if (Input.GetKeyDown(KeyCode.LeftControl) && time > cooldownTime)
@@ -97,6 +101,7 @@ public class CharacterController2D : MonoBehaviour
         }
 
         animator.SetFloat("speed", (rgbd.velocity.x != 0) ? 1f : -1f);
+        animator.SetFloat("Yspeed", (rgbd.velocity.y > 0) ? 1f : -1f);
 
         if (!mirandoDerecha && moveInput > 0)
         {
