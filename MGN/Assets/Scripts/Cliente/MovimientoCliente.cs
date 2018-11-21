@@ -14,7 +14,7 @@ public class MovimientoCliente : MonoBehaviour {
 	private int rebota = 1;
 	private Animator animator;
 	private bool mirandoDerecha = true;
-	public bool antendido = false; //No se le ha cogido nota al cliente
+	public bool antendido = true; //No se le ha cogido nota al cliente
 	public bool servido; //No se le ha servido lo que pide al cliente
     public Bebidas bebida;
 
@@ -63,7 +63,7 @@ public class MovimientoCliente : MonoBehaviour {
 		
 	}
 
-	private void pedir()
+	private void pesdir()
 	{
 		animator.SetBool("pedir", true);
 		velocidad = 0;
@@ -87,8 +87,8 @@ public class MovimientoCliente : MonoBehaviour {
 		Invoke("pararIdle", tiempoIdle);
 	}
 
-	 private void pararIdle()
-	{
+    private void pararIdle()
+    {
 		velocidad = auxVelocidad;
 	}
 	private void flip()
