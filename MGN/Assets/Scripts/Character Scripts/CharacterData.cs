@@ -4,6 +4,5 @@ using UnityEngine;
 
 public class CharacterData : MonoBehaviour
 {
-    
-
+    public static List<Bebidas> bebidas = new List<Bebidas>();
 }

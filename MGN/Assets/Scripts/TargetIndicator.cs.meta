@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 4ed68239d7fb7dc439e5360247e83c78
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - m_targetIconOnScreen: {instanceID: 0}
+  - m_targetIconOffScreen: {fileID: 21300050, guid: c10ce3915a884274cb0e08a341970e50,
+      type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

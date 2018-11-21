@@ -104,6 +104,7 @@ GameObject:
   - component: {fileID: 70552718993807440}
   - component: {fileID: 50643421013825598}
   - component: {fileID: 114857218789436358}
+  - component: {fileID: 114355986359418702}
   m_Layer: 0
   m_Name: AmandaKDA
   m_TagString: Cliente
@@ -1003,6 +1004,24 @@ MonoBehaviour:
   m_Child: {fileID: 0}
   m_ChildTransform: {fileID: 0}
   m_AttachedIK: {fileID: 0}
+--- !u!114 &114355986359418702
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1381680468274804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ed68239d7fb7dc439e5360247e83c78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_targetIconOnScreen: {fileID: 21300052, guid: 41bd836ca9469d14d8bfa04b39a9c480,
+    type: 3}
+  m_targetIconOffScreen: {fileID: 21300050, guid: c10ce3915a884274cb0e08a341970e50,
+    type: 3}
+  m_edgeBuffer: 7
+  m_targetIconScale: {x: 0.5, y: 0.5, z: 0.5}
+  ShowDebugLines: 1
 --- !u!114 &114369245821324334
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1232,6 +1251,8 @@ MonoBehaviour:
   tiempoPedir: 5
   tiempoIdle: 5
   antendido: 0
+  servido: 0
+  bebida: 0
   "se\xF1al": {fileID: 0}
 --- !u!114 &114956938974197168
 MonoBehaviour:
