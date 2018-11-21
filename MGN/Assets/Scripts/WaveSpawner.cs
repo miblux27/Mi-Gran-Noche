@@ -13,35 +13,38 @@ public class WaveSpawner : MonoBehaviour {
         public Transform enemy;
         public int count;
         public float rate;
+        public float tiempoEntreOleadas = 5f;
     }
 
     public Wave[] waves;
     private int nextWave = 0;
+    public bool stopped = false;
 
-    public float tiempoEntreOleadas = 5f;
-    public float waveCountdown;
+    public float waveCountdown = 5f;
 
     private EstadoSpawn estado = EstadoSpawn.COUNTING;
 
 	// Use this for initialization
-	void Start ()
+	/*void Start ()
     {
-        waveCountdown = tiempoEntreOleadas;
-	}
+	}*/
 	
 	// Update is called once per frame
 	void Update ()
     {
-        if (waveCountdown <= 0)
+        if (!stopped)
         {
-            if (estado != EstadoSpawn.SPAWNING)
+            if (waveCountdown <= 0)
             {
-                StartCoroutine(SpawnWave(waves[nextWave]));
+                if (estado != EstadoSpawn.SPAWNING)
+                {
+                    StartCoroutine(SpawnWave(waves[nextWave]));
+                }
             }
-        }
-        else
-        {
-            waveCountdown -= Time.deltaTime;
+            else
+            {
+                waveCountdown -= Time.deltaTime;
+            }
         }
 	}
 
@@ -53,12 +56,30 @@ public class WaveSpawner : MonoBehaviour {
             SpawnEnemy(oleada.enemy);
             yield return new WaitForSeconds(1f / oleada.rate);
         }
-        estado = EstadoSpawn.WAITING;
+        waveCountdown = oleada.tiempoEntreOleadas;
+        WaveCompleted();
         yield break;
     }
 
     private void SpawnEnemy(Transform enemy)
     {
+        Instantiate(enemy, transform.position, transform.rotation);
+    }
 
+    private void WaveCompleted()
+    {
+        estado = EstadoSpawn.COUNTING;
+
+        if (nextWave + 1 == waves.Length)
+        {
+            nextWave = 0;
+            stopped = true;
+            Debug.Log("Spawn Parado");
+        }
+        else
+        {
+            nextWave++;
+            Debug.Log("Siguiente ronda");
+        }
     }
 }
