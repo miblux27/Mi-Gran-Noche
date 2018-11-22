@@ -129,17 +129,7 @@ public class TargetIndicator : MonoBehaviour
         m_icon.transform.position = newPos;
 
     }
-
-
-
-
-
-
-
-
-
-
-
+    
     public void DrawDebugLines()
 
     {
@@ -180,12 +170,6 @@ public class TargetIndicator : MonoBehaviour
 
     }
 
-
-
-
-
-
-
     public Vector3 Vector3Maxamize(Vector3 vector)
 
     {
@@ -213,5 +197,7 @@ public class TargetIndicator : MonoBehaviour
         return returnVector;
 
     }
+
+    public void eliminar() { Destroy(m_icon); }
 
 }

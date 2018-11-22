@@ -1010,7 +1010,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1381680468274804}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4ed68239d7fb7dc439e5360247e83c78, type: 3}
   m_Name: 
@@ -1252,7 +1252,8 @@ MonoBehaviour:
   tiempoIdle: 5
   antendido: 0
   servido: 0
-  bebida: 0
+  bebida: 1
+  spawner: {fileID: 0}
   "se\xF1al": {fileID: 0}
 --- !u!114 &114956938974197168
 MonoBehaviour:

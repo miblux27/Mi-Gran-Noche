@@ -63,7 +63,8 @@ public class WaveSpawner : MonoBehaviour {
 
     private void SpawnEnemy(Transform enemy)
     {
-        Instantiate(enemy, transform.position, transform.rotation);
+        Transform cliente = Instantiate(enemy, transform.position, transform.rotation);
+        cliente.gameObject.GetComponent<MovimientoCliente>().spawner = transform;
     }
 
     private void WaveCompleted()
