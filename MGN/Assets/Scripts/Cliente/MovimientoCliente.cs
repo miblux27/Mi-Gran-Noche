@@ -14,10 +14,9 @@ public class MovimientoCliente : MonoBehaviour {
 	private int rebota = 1;
 	private Animator animator;
 	private bool mirandoDerecha = true;
-	public bool antendido = true; //No se le ha cogido nota al cliente
+	public bool antendido = false; //No se le ha cogido nota al cliente
 	public bool servido; //No se le ha servido lo que pide al cliente
     public Bebidas bebida;
-    public Transform spawner;
 
 	public GameObject señal;
 
@@ -35,18 +34,7 @@ public class MovimientoCliente : MonoBehaviour {
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (antendido && servido)
-        {
-            CancelInvoke("pedir");
-            CancelInvoke("idle");
-            transform.position = Vector2.Lerp(transform.position, spawner.position,Time.deltaTime);
-            if (Mathf.Abs(transform.position.x - spawner.position.x) < 0.1)
-            {
-                Destroy(gameObject);
-            }
-        }
-        else { Mover(); }
-        
+        Mover();
     }
 
     private void OnTriggerEnter2D(Collider2D collision){
@@ -99,8 +87,8 @@ public class MovimientoCliente : MonoBehaviour {
 		Invoke("pararIdle", tiempoIdle);
 	}
 
-    private void pararIdle()
-    {
+	 private void pararIdle()
+	{
 		velocidad = auxVelocidad;
 	}
 	private void flip()
