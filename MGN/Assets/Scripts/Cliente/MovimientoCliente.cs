@@ -4,15 +4,23 @@ using UnityEngine;
 
 public class MovimientoCliente : MonoBehaviour {
 
+
 	public float velocidad;
 
-	private float auxVelocidad;
+    public float[] zonaClientes;
+
+    private Vector3 target;
+
+    int zonasPosibles;
+
+    private float auxVelocidad;
 	public float pedirRate;
 	public float idleRate;
 	public float tiempoPedir;
 	public float tiempoIdle;
 	private int rebota = 1;
 	private Animator animator;
+    private Rigidbody2D rgbd;
 	private bool mirandoDerecha = true;
 	public bool antendido = false; //No se le ha cogido nota al cliente
 	public bool servido; //No se le ha servido lo que pide al cliente
@@ -25,16 +33,32 @@ public class MovimientoCliente : MonoBehaviour {
         //Elegir la bebida que pedirá el personaje
         bebida = Bebidas.chupito;
         auxVelocidad = velocidad;
-        Debug.Log(auxVelocidad);
         animator = GetComponent<Animator>();
-        if (!antendido) InvokeRepeating("pedir", pedirRate, pedirRate);
-        InvokeRepeating("idle", idleRate, idleRate);
+        //rgbd = GetComponent<Rigidbody2D>();
+        target.x = zonaClientes[1];
+        target.y = transform.position.y;
+        target.z = transform.position.z;
+        //if (!antendido) InvokeRepeating("pedir", pedirRate, pedirRate);
+        //InvokeRepeating("idle", idleRate, idleRate);
+        Debug.Log("voy a posicionarme");
+        //Invoke("irPosicion", 0.5f);
+        StartCoroutine("irPosicion");
+        
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        Mover();
+        //transform.position = Vector3.MoveTowards(transform.position, target, auxVelocidad * Time.deltaTime);
+        //Mover();
+    }
+
+    public IEnumerator irPosicion() {
+        while (transform.position != target) {
+            transform.position = Vector3.MoveTowards(transform.position, target, auxVelocidad * Time.deltaTime);
+            yield return new WaitForSeconds(Time.deltaTime);
+        }
+        StopCoroutine("irPosicion");
     }
 
     private void OnTriggerEnter2D(Collider2D collision){

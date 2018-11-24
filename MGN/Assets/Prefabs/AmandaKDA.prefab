@@ -1246,6 +1246,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocidad: 2
+  zonaClientes:
+  - -11.9
+  - -10.2
+  - -8
+  - -6.16
+  - 2.36
+  - 3.21
+  - 4.12
+  - 4.97
   pedirRate: 10
   idleRate: 100
   tiempoPedir: 5

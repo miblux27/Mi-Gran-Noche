@@ -126,7 +126,7 @@ public class CharacterController2D : MonoBehaviour
         if (isGrounded)
         {
             saltosActuales = extraJumps;
-            Debug.Log("Tocando suelo, saltos actuales = " + saltosActuales);
+            //Debug.Log("Tocando suelo, saltos actuales = " + saltosActuales);
         }
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
