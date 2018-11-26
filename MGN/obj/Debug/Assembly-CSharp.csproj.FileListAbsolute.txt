@@ -501,5 +501,3 @@ C:\Users\migue\OneDrive\Documentos\GitHub\Mi-Gran-Noche\MGN\obj\Debug\Assembly-C
 C:\Users\migue\OneDrive\Documentos\GitHub\Mi-Gran-Noche\MGN\obj\Debug\Assembly-CSharp.csproj.CopyComplete
 C:\Users\migue\OneDrive\Documentos\GitHub\Mi-Gran-Noche\MGN\obj\Debug\Assembly-CSharp.dll
 C:\Users\migue\OneDrive\Documentos\GitHub\Mi-Gran-Noche\MGN\obj\Debug\Assembly-CSharp.pdb
-C:\Users\migue\OneDrive\Documentos\GitHub\Mi-Gran-Noche\MGN\Temp\bin\Debug\UnityEditor.UI.dll
-C:\Users\migue\OneDrive\Documentos\GitHub\Mi-Gran-Noche\MGN\Temp\bin\Debug\UnityEditor.UI.xml

@@ -2,12 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MovimientoCliente : MonoBehaviour {
-
+public class MovimientoCliente : MonoBehaviour{
 
 	public float velocidad;
-
-    public float[] zonaClientes;
 
     private Vector3 target;
 
@@ -35,7 +32,11 @@ public class MovimientoCliente : MonoBehaviour {
         auxVelocidad = velocidad;
         animator = GetComponent<Animator>();
         //rgbd = GetComponent<Rigidbody2D>();
-        target.x = zonaClientes[1];
+
+        int rndm = Random.Range(0, GameManager.zonasDisponibles.Length);
+        while (GameManager.zonasOcupadas[rndm]) rndm = Random.Range(0, GameManager.zonasDisponibles.Length);
+        GameManager.zonasOcupadas[rndm] = true;
+        target.x = GameManager.zonasDisponibles[rndm];
         target.y = transform.position.y;
         target.z = transform.position.z;
         //if (!antendido) InvokeRepeating("pedir", pedirRate, pedirRate);
@@ -54,10 +55,12 @@ public class MovimientoCliente : MonoBehaviour {
     }
 
     public IEnumerator irPosicion() {
+        if (transform.position.x > target.x) flip();
         while (transform.position != target) {
             transform.position = Vector3.MoveTowards(transform.position, target, auxVelocidad * Time.deltaTime);
             yield return new WaitForSeconds(Time.deltaTime);
         }
+        // Aquí el cliente tiene que realizar el pedido
         StopCoroutine("irPosicion");
     }
 
@@ -115,6 +118,7 @@ public class MovimientoCliente : MonoBehaviour {
 	{
 		velocidad = auxVelocidad;
 	}
+
 	private void flip()
     {
         mirandoDerecha = !mirandoDerecha;

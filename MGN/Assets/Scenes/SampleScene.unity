@@ -217,7 +217,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 108004497}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.77, y: -3.39, z: 0.040335357}
+  m_LocalPosition: {x: -2.77, y: -3.7, z: 0.040335357}
   m_LocalScale: {x: 1.7509038, y: 5.092817, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -237,8 +237,8 @@ MonoBehaviour:
   waves:
   - name: Ronda 1
     enemy: {fileID: 4492950524085276, guid: 5297710921912e74a9a09d2a32b78570, type: 2}
-    count: 1
-    rate: 1
+    count: 8
+    rate: 0.1
     tiempoEntreOleadas: 1
   stopped: 0
   waveCountdown: 1
@@ -759,7 +759,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -4.7448864, y: -2.5150132, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

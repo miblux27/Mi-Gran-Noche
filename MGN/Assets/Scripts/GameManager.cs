@@ -7,4 +7,6 @@ public static class GameManager
     public static float tiempoDeJuego = 0f;
     public static bool juegoEnPausa = false;
 
+    public static float[] zonasDisponibles = { -11.9f, -10.2f, -8.0f, -6.16f, 2.36f, 3.21f, 4.12f, 4.97f };
+    public static bool[] zonasOcupadas = { false, false, false, false, false, false, false, false };
 }
