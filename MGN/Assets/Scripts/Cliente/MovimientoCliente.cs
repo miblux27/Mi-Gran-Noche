@@ -7,11 +7,12 @@ public class MovimientoCliente : MonoBehaviour{
 	public float velocidad;
 
     private Vector3 target;
-
     private Vector3 originalPosition;
+    private Vector3 posicionBaile;
 
     int zonasPosibles;
     int rndm;
+    int rndmBailar;
 
     private float auxVelocidad;
 	public float pedirRate;
@@ -37,6 +38,13 @@ public class MovimientoCliente : MonoBehaviour{
         //rgbd = GetComponent<Rigidbody2D>();
         originalPosition = transform.position;
 
+        rndmBailar = Random.Range(0, GameManager.zonasDeBaile.Length);
+        while (GameManager.zonasDeBaileOcupadas[rndmBailar]) rndmBailar = Random.Range(0, GameManager.zonasDeBaile.Length);
+        GameManager.zonasDeBaileOcupadas[rndmBailar] = true;
+        posicionBaile.x = GameManager.zonasDeBaile[rndmBailar];
+        posicionBaile.y = transform.position.y;
+        posicionBaile.z = transform.position.z;
+
         rndm = Random.Range(0, GameManager.zonasDisponibles.Length);
         while (GameManager.zonasOcupadas[rndm]) rndm = Random.Range(0, GameManager.zonasDisponibles.Length);
         GameManager.zonasOcupadas[rndm] = true;
@@ -47,7 +55,7 @@ public class MovimientoCliente : MonoBehaviour{
         //InvokeRepeating("idle", idleRate, idleRate);
         Debug.Log("voy a posicionarme");
         //Invoke("irPosicion", 0.5f);
-        StartCoroutine("irPosicion");
+        StartCoroutine("bailar");
         
     }
 
@@ -58,29 +66,83 @@ public class MovimientoCliente : MonoBehaviour{
         //Mover();
     }
 
+    public IEnumerator bailar()
+    {
+        if (transform.position.x > posicionBaile.x) flip();
+        while (transform.position != posicionBaile)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, posicionBaile, auxVelocidad * Time.deltaTime);
+            yield return new WaitForSeconds(Time.deltaTime);
+        }
+
+        for (int i = 0; i < GameManager.zonasDeBaile.Length; i++)
+        {
+            yield return new WaitForSeconds(2.0f);
+            flip();
+        }
+        GameManager.zonasDeBaileOcupadas[rndmBailar] = false;
+        StartCoroutine("irPosicion");
+        StopCoroutine("bailar");
+    }
+
     public IEnumerator irPosicion() {
-        if (transform.position.x > target.x) flip();
+        if (transform.position.x > target.x && mirandoDerecha) flip();
+        else if (transform.position.x < target.x && !mirandoDerecha) flip();
         while (transform.position != target) {
             transform.position = Vector3.MoveTowards(transform.position, target, auxVelocidad * Time.deltaTime);
             yield return new WaitForSeconds(Time.deltaTime);
         }
         // Aquí el cliente tiene que realizar el pedido
-        StartCoroutine("denegarComanda");
+        StartCoroutine("timerCliente");
         StopCoroutine("irPosicion");
+    }
+
+    public IEnumerator timerCliente()
+    {
+        int tiempo = 15;
+        while (tiempo > 0) {
+            /*if (atendido) {
+                StartCoroutine("denegarComanda");
+                StopCoroutine("timerCliente");
+            }*/
+            tiempo -= 1;
+            yield return new WaitForSeconds(1.0f);
+        }
+
+        GameManager.zonasOcupadas[rndm] = false;
+        StartCoroutine("abandonarLocal");
+        StopCoroutine("timerClientes");
     }
 
     public IEnumerator denegarComanda()
     {
-        yield return new WaitForSeconds(10.0f);
+        int tiempo = 15;
+        while (tiempo > 0)
+        {
+            /*if (atendido)
+            {
+                StartCoroutine("abandonarLocal");
+                StopCoroutine("denegarComanda");
+            }*/
+            tiempo -= 1;
+            yield return new WaitForSeconds(Time.deltaTime);
+        }
+
         GameManager.zonasOcupadas[rndm] = false;
-        //if (!atendido)
-        flip();
-        while(transform.position != originalPosition) {
+        StartCoroutine("abandonarLocal");
+        StopCoroutine("denegarComanda");
+    }
+
+    private IEnumerator abandonarLocal() {
+        if (transform.position.x > originalPosition.x && mirandoDerecha) flip();
+        else if (transform.position.x < originalPosition.x && !mirandoDerecha) flip();
+        while (transform.position != originalPosition)
+        {
             transform.position = Vector3.MoveTowards(transform.position, originalPosition, auxVelocidad * Time.deltaTime);
             yield return new WaitForSeconds(Time.deltaTime);
         }
         Destroy(this.gameObject);
-        StopCoroutine("denegarComanda");
+        StopCoroutine("abandonarLocal");
     }
 
     private void OnTriggerEnter2D(Collider2D collision){
