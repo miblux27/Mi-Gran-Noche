@@ -8,7 +8,10 @@ public class MovimientoCliente : MonoBehaviour{
 
     private Vector3 target;
 
+    private Vector3 originalPosition;
+
     int zonasPosibles;
+    int rndm;
 
     private float auxVelocidad;
 	public float pedirRate;
@@ -19,7 +22,7 @@ public class MovimientoCliente : MonoBehaviour{
 	private Animator animator;
     private Rigidbody2D rgbd;
 	private bool mirandoDerecha = true;
-	public bool antendido = false; //No se le ha cogido nota al cliente
+	public bool atendido = false; //No se le ha cogido nota al cliente
 	public bool servido; //No se le ha servido lo que pide al cliente
     public Bebidas bebida;
 
@@ -32,14 +35,15 @@ public class MovimientoCliente : MonoBehaviour{
         auxVelocidad = velocidad;
         animator = GetComponent<Animator>();
         //rgbd = GetComponent<Rigidbody2D>();
+        originalPosition = transform.position;
 
-        int rndm = Random.Range(0, GameManager.zonasDisponibles.Length);
+        rndm = Random.Range(0, GameManager.zonasDisponibles.Length);
         while (GameManager.zonasOcupadas[rndm]) rndm = Random.Range(0, GameManager.zonasDisponibles.Length);
         GameManager.zonasOcupadas[rndm] = true;
         target.x = GameManager.zonasDisponibles[rndm];
         target.y = transform.position.y;
         target.z = transform.position.z;
-        //if (!antendido) InvokeRepeating("pedir", pedirRate, pedirRate);
+        //if (!atendido) InvokeRepeating("pedir", pedirRate, pedirRate);
         //InvokeRepeating("idle", idleRate, idleRate);
         Debug.Log("voy a posicionarme");
         //Invoke("irPosicion", 0.5f);
@@ -61,7 +65,22 @@ public class MovimientoCliente : MonoBehaviour{
             yield return new WaitForSeconds(Time.deltaTime);
         }
         // Aquí el cliente tiene que realizar el pedido
+        StartCoroutine("denegarComanda");
         StopCoroutine("irPosicion");
+    }
+
+    public IEnumerator denegarComanda()
+    {
+        yield return new WaitForSeconds(10.0f);
+        GameManager.zonasOcupadas[rndm] = false;
+        //if (!atendido)
+        flip();
+        while(transform.position != originalPosition) {
+            transform.position = Vector3.MoveTowards(transform.position, originalPosition, auxVelocidad * Time.deltaTime);
+            yield return new WaitForSeconds(Time.deltaTime);
+        }
+        Destroy(this.gameObject);
+        StopCoroutine("denegarComanda");
     }
 
     private void OnTriggerEnter2D(Collider2D collision){
@@ -96,7 +115,7 @@ public class MovimientoCliente : MonoBehaviour{
 		velocidad = 0;
 		señal.SetActive(true); //Activa la señal
 		Debug.Log("He pasado a pedir");
-		if (antendido) pararPedir();
+		if (atendido) pararPedir();
 	}
 
 	private void pararPedir()
