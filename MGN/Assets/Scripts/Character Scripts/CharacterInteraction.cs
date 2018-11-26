@@ -29,9 +29,9 @@ public class CharacterInteraction : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.E) && collision.GetComponent<Collider2D>().CompareTag("Cliente"))
         {
             MovimientoCliente cliente = collision.GetComponent<MovimientoCliente>();
-            if (!cliente.antendido)
+            if (!cliente.atendido)
             {
-                cliente.antendido = true;
+                cliente.atendido = true;
                 Debug.Log("Cliente Atendido");
             }
             else if (!cliente.servido)
