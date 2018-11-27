@@ -23,7 +23,7 @@ public class CharacterInteraction : MonoBehaviour {
             if (CharacterData.bebidas.Count < 3)
             {
                 Debug.Log("Coger Bebida");
-                CharacterData.bebidas.Add(Bebidas.chupito);
+                CharacterData.bebidas.Add(Bebidas.cocktail);
             }
         }
         if (Input.GetKeyDown(KeyCode.E) && collision.GetComponent<Collider2D>().CompareTag("Cliente"))
@@ -32,6 +32,8 @@ public class CharacterInteraction : MonoBehaviour {
             if (!cliente.atendido)
             {
                 cliente.atendido = true;
+                cliente.GetComponentInChildren<ClientePidiendo>().aparece = false; //Desaparece el icono de pedir
+                cliente.GetComponentInChildren<ClienteAtendido>().aparece = true; //Aparece icono de la bebida
                 Debug.Log("Cliente Atendido");
             }
             else if (!cliente.servido)
@@ -39,6 +41,8 @@ public class CharacterInteraction : MonoBehaviour {
                 if (CharacterData.bebidas.Contains(cliente.bebida))
                 {
                     cliente.servido = true;
+                    cliente.GetComponentInChildren<ClienteAtendido>().aparece = false; //Desaparece icono de bebida
+                    cliente.GetComponentInChildren<ClienteServido>().aparece = true; //Aparece icono de satisfecho
                     CharacterData.bebidas.Remove(cliente.bebida);
                     Debug.Log("Cliente Servido");
                 }
