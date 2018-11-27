@@ -32,7 +32,8 @@ public class MovimientoCliente : MonoBehaviour{
     private void Start()
     {
         //Elegir la bebida que pedirá el personaje
-        bebida = Bebidas.chupito;
+        bebida =(Bebidas)Random.Range(1, GameManager.cantidadBebidas);
+        Debug.Log("Voy a pedir " + bebida);
         auxVelocidad = velocidad;
         animator = GetComponent<Animator>();
         //rgbd = GetComponent<Rigidbody2D>();
