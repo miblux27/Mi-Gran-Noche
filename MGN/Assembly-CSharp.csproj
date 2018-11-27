@@ -137,6 +137,8 @@
     <Compile Include="Assets\Scripts\Cliente\MovimientoCliente.cs" />
     <Compile Include="Assets\Scripts\Cliente\SeñalesClientes.cs" />
     <Compile Include="Assets\Scripts\DispensadorController.cs" />
+    <Compile Include="Assets\Scripts\Enemigo\EnemySpawner.cs" />
+    <Compile Include="Assets\Scripts\Enemigo\MovimientoEnemigo.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\GrupoBehaviour.cs" />
     <Compile Include="Assets\Scripts\TargetIndicator.cs" />

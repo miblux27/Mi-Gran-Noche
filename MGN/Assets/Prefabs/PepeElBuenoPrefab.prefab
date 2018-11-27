@@ -1303,20 +1303,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocidad: 1.78
-  zonaClientes:
-  - -11.9
-  - -10.2
-  - -8
-  - -6.16
-  - 2.36
-  - 3.21
-  - 4.12
-  - 4.97
   pedirRate: 0
   idleRate: 0
   tiempoPedir: 0
   tiempoIdle: 0
-  antendido: 0
+  atendido: 0
   servido: 0
   bebida: 0
   "se\xF1al": {fileID: 0}
