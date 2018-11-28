@@ -143,7 +143,7 @@ public class MovimientoCliente : MonoBehaviour{
                 GetComponentInChildren<ClienteAtendido3>().aparece = true;
             }*/
             tiempo -= 1;
-            yield return new WaitForSeconds(Time.deltaTime);
+            yield return new WaitForSeconds(1.0f);
             Debug.Log("timer 2: " + tiempo);
         }
 

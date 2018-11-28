@@ -1316,7 +1316,6 @@ MonoBehaviour:
   atendido: 0
   servido: 0
   bebida: 0
-  "se\xF1al": {fileID: 0}
 --- !u!114 &114684502974851934
 MonoBehaviour:
   m_ObjectHideFlags: 1
