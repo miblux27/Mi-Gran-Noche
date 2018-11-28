@@ -127,6 +127,9 @@
      <Compile Include="Assets\Scripts\Character Scripts\CharacterData.cs" />
      <Compile Include="Assets\Scripts\Character Scripts\CharacterInteraction.cs" />
      <Compile Include="Assets\Scripts\Cliente\ClienteAtendido.cs" />
+     <Compile Include="Assets\Scripts\Cliente\ClienteAtendido2.cs" />
+     <Compile Include="Assets\Scripts\Cliente\ClienteAtendido3.cs" />
+     <Compile Include="Assets\Scripts\Cliente\ClienteFail.cs" />
      <Compile Include="Assets\Scripts\Cliente\ClientePidiendo.cs" />
      <Compile Include="Assets\Scripts\Cliente\ClienteServido.cs" />
      <Compile Include="Assets\Scripts\Cliente\MovimientoCliente.cs" />

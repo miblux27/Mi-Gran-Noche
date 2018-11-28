@@ -27,7 +27,7 @@ public class MovimientoCliente : MonoBehaviour{
 	public bool servido; //No se le ha servido lo que pide al cliente
     public Bebidas bebida;
 
-	public GameObject señal;
+
 
     private void Start()
     {
@@ -93,6 +93,7 @@ public class MovimientoCliente : MonoBehaviour{
             transform.position = Vector3.MoveTowards(transform.position, target, auxVelocidad * Time.deltaTime);
             yield return new WaitForSeconds(Time.deltaTime);
         }
+        Debug.Log("empiezo a pedir");
         // Aquí el cliente tiene que realizar el pedido
         StartCoroutine("timerCliente");
         StopCoroutine("irPosicion");
@@ -100,6 +101,7 @@ public class MovimientoCliente : MonoBehaviour{
 
     public IEnumerator timerCliente()
     {
+        
         int tiempo = 15;
         while (tiempo > 0) {
             /*if (atendido) {
@@ -172,7 +174,7 @@ public class MovimientoCliente : MonoBehaviour{
 		
 	}
 
-	private void pedir()
+	/* private void pedir()
 	{
 		animator.SetBool("pedir", true);
 		velocidad = 0;
@@ -187,7 +189,7 @@ public class MovimientoCliente : MonoBehaviour{
 		animator.SetBool("pedir", false);
 		velocidad = auxVelocidad;
 		señal.SetActive(false); //Desactiva la señal
-	}
+	} */
 
 	private void idle()
 	{
