@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class ClienteAtendido : MonoBehaviour {
 	public Transform Target;
-	public GameObject simbolo;
 	public bool aparece;
 	public Bebidas Cocktail;
 	public Bebidas Cerveza;
@@ -30,6 +29,7 @@ public class ClienteAtendido : MonoBehaviour {
 				}
 		} 
 		else  SetChildrenActive(false);
+		//if(transform.localScale.x < 1) this.GetComponent<MovimientoCliente>().flip();
 	}
 
 	void SetChildrenActive(bool value)

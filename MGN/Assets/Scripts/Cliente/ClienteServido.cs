@@ -13,6 +13,7 @@ public class ClienteServido : MonoBehaviour {
 		Vector3 dir = Target.position - transform.position;
 		if(aparece) SetChildrenActive(true);
 		else  SetChildrenActive(false);
+		//if(transform.localScale.x < 1) this.GetComponent<MovimientoCliente>().flip();
 	}
 
 	void SetChildrenActive(bool value)

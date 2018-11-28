@@ -23,10 +23,9 @@ public class MovimientoCliente : MonoBehaviour{
 	private Animator animator;
     private Rigidbody2D rgbd;
 	private bool mirandoDerecha = true;
-	public bool atendido = false; //No se le ha cogido nota al cliente
+	public bool atendido; //No se le ha cogido nota al cliente
 	public bool servido; //No se le ha servido lo que pide al cliente
     public Bebidas bebida;
-
 
 
     private void Start()
@@ -93,8 +92,8 @@ public class MovimientoCliente : MonoBehaviour{
             transform.position = Vector3.MoveTowards(transform.position, target, auxVelocidad * Time.deltaTime);
             yield return new WaitForSeconds(Time.deltaTime);
         }
-        Debug.Log("empiezo a pedir");
-        // Aquí el cliente tiene que realizar el pedido
+        Debug.Log("estoy pidiendo");
+        GetComponentInChildren<ClientePidiendo>().aparece = true; // Aquí el cliente tiene que realizar el pedido
         StartCoroutine("timerCliente");
         StopCoroutine("irPosicion");
     }
@@ -104,12 +103,15 @@ public class MovimientoCliente : MonoBehaviour{
         
         int tiempo = 15;
         while (tiempo > 0) {
-            /*if (atendido) {
+            if (atendido) 
+            {
+                Debug.Log("paso a decir lo que quiero");
                 StartCoroutine("denegarComanda");
                 StopCoroutine("timerCliente");
-            }*/
+            }
             tiempo -= 1;
             yield return new WaitForSeconds(1.0f);
+            Debug.Log("timer 1: " + tiempo);
         }
 
         GameManager.zonasOcupadas[rndm] = false;
@@ -119,16 +121,30 @@ public class MovimientoCliente : MonoBehaviour{
 
     public IEnumerator denegarComanda()
     {
+        
         int tiempo = 15;
         while (tiempo > 0)
         {
-            /*if (atendido)
+            if (servido)
             {
                 StartCoroutine("abandonarLocal");
                 StopCoroutine("denegarComanda");
+            }
+           /*  else if (tiempo == 10) 
+            {
+                Debug.Log("me quedan 10 segundos");
+                GetComponentInChildren<ClienteAtendido>().aparece = false;
+                GetComponentInChildren<ClienteAtendido2>().aparece = true;
+            }
+            else if (tiempo == 5)
+            {
+                Debug.Log("me quedan 5 segundos");
+                GetComponentInChildren<ClienteAtendido2>().aparece = false;
+                GetComponentInChildren<ClienteAtendido3>().aparece = true;
             }*/
             tiempo -= 1;
             yield return new WaitForSeconds(Time.deltaTime);
+            Debug.Log("timer 2: " + tiempo);
         }
 
         GameManager.zonasOcupadas[rndm] = false;
@@ -137,6 +153,15 @@ public class MovimientoCliente : MonoBehaviour{
     }
 
     private IEnumerator abandonarLocal() {
+        if(!servido)
+        {
+            Debug.Log("me piro sin ser servido");
+            GetComponentInChildren<ClientePidiendo>().aparece = false;
+            GetComponentInChildren<ClienteAtendido>().aparece = false;
+            GetComponentInChildren<ClienteAtendido2>().aparece = false;
+            GetComponentInChildren<ClienteAtendido3>().aparece = false;
+            GetComponentInChildren<ClienteFail>().aparece = true;
+        }
         if (transform.position.x > originalPosition.x && mirandoDerecha) flip();
         else if (transform.position.x < originalPosition.x && !mirandoDerecha) flip();
         while (transform.position != originalPosition)
