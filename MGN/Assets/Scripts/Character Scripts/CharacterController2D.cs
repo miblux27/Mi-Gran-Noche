@@ -15,7 +15,7 @@ public class CharacterController2D : MonoBehaviour
     public Transform groundCheck;
     public float checkRadius;
     public LayerMask whatIsGround;
-
+    public GameObject cocktails, chupitos, cervezas;
     private int saltosActuales;
     private float moveInput;
     private float slideTime;
@@ -44,6 +44,10 @@ public class CharacterController2D : MonoBehaviour
         colliders = GetComponents<Collider2D>();
         particle = gameObject.GetComponentInChildren<ParticleSystem>();
         particle.Stop();
+
+        cocktails = GameObject.Find("cocktails");
+        chupitos = GameObject.Find("chupitos");
+        cervezas = GameObject.Find("cervezas");
     }
 
     private void Update()
@@ -52,6 +56,24 @@ public class CharacterController2D : MonoBehaviour
 
         Mover();
         if(!GameManager.juegoEnPausa) Saltar();
+
+        if (CharacterInteraction.NumCocktail <= 0)
+        {
+            cocktails.SetActive(false);
+        }
+        else { cocktails.SetActive(true); }
+
+        if (CharacterInteraction.NumChupito <= 0)
+        {
+            chupitos.SetActive(false); ;
+        }
+        else { chupitos.SetActive(true); }
+
+        if (CharacterInteraction.NumCerveza <= 0)
+        {
+            cervezas.SetActive(false); ;
+        }
+        else { cervezas.SetActive(true); }
     }
 
     private void Mover()
@@ -111,6 +133,8 @@ public class CharacterController2D : MonoBehaviour
         {
             Flip();
         }
+        
+        
     }
 
     private void Flip()

@@ -5,8 +5,9 @@ using UnityEngine;
 public class CharacterInteraction : MonoBehaviour {
 
     public CharacterController2D character;
-
+    public static int NumCocktail, NumChupito, NumCerveza;
     private GameObject Cliente;
+    
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -24,16 +25,19 @@ public class CharacterInteraction : MonoBehaviour {
                     //barra.ActivarMenu();
                     Debug.Log("Coger Cocktail");
                     CharacterData.bebidas.Add(Bebidas.cocktail);
+                    NumCocktail++;
                 }
                 else if (Input.GetKeyDown(KeyCode.E) && collision.GetComponent<Collider2D>().CompareTag("BarraChupito"))
                 {
                     Debug.Log("Coger Chupito");
                     CharacterData.bebidas.Add(Bebidas.chupito);
+                    NumChupito++;
                 }
                 else if (Input.GetKeyDown(KeyCode.E) && collision.GetComponent<Collider2D>().CompareTag("BarraCerveza"))
                 {
                     Debug.Log("Coger cerveza");
                     CharacterData.bebidas.Add(Bebidas.cerveza);
+                    NumCerveza++;
                 }
             }
         if (Input.GetKeyDown(KeyCode.E) && collision.GetComponent<Collider2D>().CompareTag("Cliente"))
@@ -50,6 +54,17 @@ public class CharacterInteraction : MonoBehaviour {
             {
                 if (CharacterData.bebidas.Contains(cliente.bebida))
                 {
+                    if (cliente.bebida == Bebidas.cocktail) {
+                        NumCocktail--;
+                    }
+                    if (cliente.bebida == Bebidas.chupito)
+                    {
+                        NumChupito--;
+                    }
+                    if (cliente.bebida == Bebidas.cerveza){
+                        NumCerveza--;
+                    }
+                    
                     cliente.servido = true;
                     cliente.GetComponentInChildren<ClienteAtendido>().aparece = false; //Desaparece icono de bebida
                     cliente.GetComponentInChildren<ClienteServido>().aparece = true; //Aparece icono de satisfecho
