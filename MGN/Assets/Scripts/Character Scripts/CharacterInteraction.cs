@@ -46,8 +46,6 @@ public class CharacterInteraction : MonoBehaviour {
             if (!cliente.atendido)
             {
                 cliente.atendido = true;
-                cliente.GetComponentInChildren<ClientePidiendo>().aparece = false; //Desaparece el icono de pedir
-                cliente.GetComponentInChildren<ClienteAtendido>().aparece = true; //Aparece icono de la bebida
                 Debug.Log("Cliente Atendido");
             }
             else if (!cliente.servido)
@@ -66,8 +64,6 @@ public class CharacterInteraction : MonoBehaviour {
                     }
                     
                     cliente.servido = true;
-                    cliente.GetComponentInChildren<ClienteAtendido>().aparece = false; //Desaparece icono de bebida
-                    cliente.GetComponentInChildren<ClienteServido>().aparece = true; //Aparece icono de satisfecho
                     CharacterData.bebidas.Remove(cliente.bebida);
                     Debug.Log("Cliente Servido");
                 }
