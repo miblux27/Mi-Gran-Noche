@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MovimientoEnemigo : MonoBehaviour
+public class MovimientoEnemigo : MovimientoNPCs
 {
 
     public float velocidad = 0.0f;
@@ -13,8 +13,6 @@ public class MovimientoEnemigo : MonoBehaviour
 
     private Vector3 minRange;
     private Vector3 maxRange;
-
-    private bool mirandoDerecha;
 
     // Use this for initialization
     void Start()
@@ -30,7 +28,6 @@ public class MovimientoEnemigo : MonoBehaviour
         primeraVelocidad = velocidad;
         InvokeRepeating("accion", 10.0f, 15.0f);
 
-        mirandoDerecha = true;
         flip();
     }
 
@@ -64,14 +61,6 @@ public class MovimientoEnemigo : MonoBehaviour
     private void movimiento()
     {
         velocidad = primeraVelocidad;
-    }
-
-    private void flip()
-    {
-        mirandoDerecha = !mirandoDerecha;
-        Vector3 escala = transform.localScale;
-        escala.x *= -1;
-        transform.localScale = escala;
     }
 }
 

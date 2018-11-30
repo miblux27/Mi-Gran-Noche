@@ -146,6 +146,7 @@
     <Compile Include="Assets\Scripts\Enemigo\MovimientoEnemigo.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\GrupoBehaviour.cs" />
+    <Compile Include="Assets\Scripts\MovimientoNPCs.cs" />
     <Compile Include="Assets\Scripts\TargetIndicator.cs" />
     <Compile Include="Assets\Scripts\UI\ActivarMenuObjeto.cs" />
     <Compile Include="Assets\Scripts\UI\UIslide.cs" />

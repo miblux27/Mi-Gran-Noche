@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MovimientoCliente : MonoBehaviour{
+public class MovimientoCliente : MovimientoNPCs {
 
     // Velocidad del personaje
 	public float velocidad;
@@ -19,18 +19,16 @@ public class MovimientoCliente : MonoBehaviour{
     // Comportamiento
     private Animator animator;
     private Rigidbody2D rgbd;
-    private bool mirandoDerecha = true;
     public bool atendido = false; //No se le ha cogido nota al cliente
     public bool servido = false; //No se le ha servido lo que pide al cliente
     public Bebidas bebida;
 
     // Parámetros auxiliares
     private float auxVelocidad;
-	private int rebota = 1;
     private bool deboDestruirme;
     private bool deboDestruirme2;
 	
-
+    // Nada más aparece en la escena, sin cargar ni siquiera los sprites
     private void Awake()
     {
         deboDestruirme = true;
@@ -55,12 +53,17 @@ public class MovimientoCliente : MonoBehaviour{
 
         GetComponentInChildren<ClientePidiendo>().GetComponentInChildren<SpriteRenderer>().gameObject.SetActive(false);
         GetComponentInChildren<ClienteServido>().GetComponentInChildren<SpriteRenderer>().gameObject.SetActive(false);
-        GetComponentInChildren<ClienteAtendido>().GetComponentInChildren<SpriteRenderer>().gameObject.SetActive(false);
+
+        foreach (Transform child in GetComponentInChildren<ClienteAtendido>().transform) {
+            child.gameObject.SetActive(false);
+        }
+
         GetComponentInChildren<ClienteFail>().GetComponentInChildren<SpriteRenderer>().gameObject.SetActive(false);
 
         if (deboDestruirme || deboDestruirme2) Destroy(this.gameObject);
     }
 
+    // Una vez ya creado el gameObject
     private void Start()
     {
 
@@ -90,36 +93,32 @@ public class MovimientoCliente : MonoBehaviour{
         StartCoroutine("bailar");
     }
 
-    // Update is called once per frame
-    void FixedUpdate()
-    {
-        //transform.position = Vector3.MoveTowards(transform.position, target, auxVelocidad * Time.deltaTime);
-        //Mover();
-    }
-
     public IEnumerator bailar()
     {
-        if (transform.position.x > posicionBaile.x) flip();
+        if (transform.position.x > posicionBaile.x && mirandoDerecha) flip();
+        else if (transform.position.x < posicionBaile.x && !mirandoDerecha) flip();
         while (transform.position != posicionBaile)
         {
             transform.position = Vector3.MoveTowards(transform.position, posicionBaile, auxVelocidad * Time.deltaTime);
             yield return new WaitForSeconds(Time.deltaTime);
         }
-
+        Debug.Log("ya he ido a mi posición de baile");
         for (int i = 0; i < GameManager.zonasDeBaile.Length; i++)
         {
             yield return new WaitForSeconds(2.0f);
             flip();
         }
-        GameManager.zonasDeBaileOcupadas[rndmBailar] = false;
+
         StartCoroutine("irPosicion");
         StopCoroutine("bailar");
     }
 
     public IEnumerator irPosicion() {
+        GameManager.zonasDeBaileOcupadas[rndmBailar] = false;
         if (transform.position.x > target.x && mirandoDerecha) flip();
         else if (transform.position.x < target.x && !mirandoDerecha) flip();
-        while (transform.position != target) {
+        while (transform.position != target)
+        {
             transform.position = Vector3.MoveTowards(transform.position, target, auxVelocidad * Time.deltaTime);
             yield return new WaitForSeconds(Time.deltaTime);
         }
@@ -127,6 +126,7 @@ public class MovimientoCliente : MonoBehaviour{
         GetComponentInChildren<ClientePidiendo>().aparece = true; // Aquí el cliente tiene que realizar el pedido
         StartCoroutine("timerCliente");
         StopCoroutine("irPosicion");
+        yield break;
     }
 
     public IEnumerator timerCliente()
@@ -146,8 +146,6 @@ public class MovimientoCliente : MonoBehaviour{
             yield return new WaitForSeconds(1.0f);
             Debug.Log("timer 1: " + tiempo);
         }
-
-        GameManager.zonasOcupadas[rndm] = false;
         GetComponentInChildren<ClientePidiendo>().aparece = false;
         GetComponentInChildren<ClienteFail>().aparece = true;
         StartCoroutine("abandonarLocal");
@@ -183,22 +181,14 @@ public class MovimientoCliente : MonoBehaviour{
             yield return new WaitForSeconds(1.0f);
             Debug.Log("timer 2: " + tiempo);
         }
-
         GetComponentInChildren<ClienteAtendido>().aparece = false;
         GetComponentInChildren<ClienteFail>().aparece = true;
-        GameManager.zonasOcupadas[rndm] = false;
         StartCoroutine("abandonarLocal");
         StopCoroutine("denegarComanda");
     }
 
     private IEnumerator abandonarLocal() {
-        if(!servido)
-        {
-            Debug.Log("me piro sin ser servido");
-            //GetComponentInChildren<ClientePidiendo>().aparece = false;
-            //GetComponentInChildren<ClienteAtendido>().aparece = false;
-            //GetComponentInChildren<ClienteFail>().aparece = true;
-        }
+        GameManager.zonasOcupadas[rndm] = false;
         if (transform.position.x > originalPosition.x && mirandoDerecha) flip();
         else if (transform.position.x < originalPosition.x && !mirandoDerecha) flip();
         while (transform.position != originalPosition)
@@ -208,22 +198,15 @@ public class MovimientoCliente : MonoBehaviour{
         }
         Destroy(this.gameObject);
         StopCoroutine("abandonarLocal");
+        yield break;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision){
+    /*private void OnTriggerEnter2D(Collider2D collision){
 		if(collision.GetComponent<Collider2D>().CompareTag("Punto")) //Cambia de direccion
 		{
 			flip();
 			rebota = -rebota;
 		}
-	}
-
-	private void flip()
-    {
-        mirandoDerecha = !mirandoDerecha;
-        Vector3 escala = transform.localScale;
-        escala.x *= -1;
-        transform.localScale = escala;
-    }
+	}*/
 
 }
