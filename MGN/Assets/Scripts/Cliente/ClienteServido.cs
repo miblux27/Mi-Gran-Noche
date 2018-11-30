@@ -6,9 +6,9 @@ public class ClienteServido : MonoBehaviour {
 
 	public Transform Target;
 	public bool aparece;
-	
-	// Update is called once per frame
-	void Update () 
+
+    // Update is called once per frame
+    void Update () 
 	{
 		Vector3 dir = Target.position - transform.position;
 		if(aparece) SetChildrenActive(true);

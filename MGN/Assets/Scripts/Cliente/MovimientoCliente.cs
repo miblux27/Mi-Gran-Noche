@@ -4,47 +4,72 @@ using UnityEngine;
 
 public class MovimientoCliente : MonoBehaviour{
 
+    // Velocidad del personaje
 	public float velocidad;
+
+    // Posición de pedir y de baile
+    int zonasPosibles;
+    int rndm;
+    int rndmBailar;
 
     private Vector3 target;
     private Vector3 originalPosition;
     private Vector3 posicionBaile;
 
-    int zonasPosibles;
-    int rndm;
-    int rndmBailar;
-
-    private float auxVelocidad;
-	public float pedirRate;
-	public float idleRate;
-	public float tiempoPedir;
-	public float tiempoIdle;
-	private int rebota = 1;
-	private Animator animator;
+    // Comportamiento
+    private Animator animator;
     private Rigidbody2D rgbd;
-	private bool mirandoDerecha = true;
-	public bool atendido = false; //No se le ha cogido nota al cliente
-	public bool servido = false; //No se le ha servido lo que pide al cliente
+    private bool mirandoDerecha = true;
+    public bool atendido = false; //No se le ha cogido nota al cliente
+    public bool servido = false; //No se le ha servido lo que pide al cliente
     public Bebidas bebida;
+
+    // Parámetros auxiliares
+    private float auxVelocidad;
+	private int rebota = 1;
+    private bool deboDestruirme;
+    private bool deboDestruirme2;
+	
 
     private void Awake()
     {
-        GetComponentInChildren<ClientePidiendo>().aparece = false;
-        GetComponentInChildren<ClienteServido>().aparece = false;
-        GetComponentInChildren<ClienteAtendido>().aparece = false;
-        GetComponentInChildren<ClienteAtendido2>().aparece = false;
-        GetComponentInChildren<ClienteAtendido3>().aparece = false;
-        GetComponentInChildren<ClienteFail>().aparece = false;
+        deboDestruirme = true;
+        for (int i = 0; i < GameManager.zonasDeBaileOcupadas.Length; i++)
+        {
+            if (!GameManager.zonasDeBaileOcupadas[i])
+            {
+                deboDestruirme = false;
+                break;
+            }
+        }
+
+        deboDestruirme2 = true;
+        for (int i = 0; i < GameManager.zonasOcupadas.Length; i++)
+        {
+            if (!GameManager.zonasOcupadas[i])
+            {
+                deboDestruirme2 = false;
+                break;
+            }
+        }
+
+        GetComponentInChildren<ClientePidiendo>().GetComponentInChildren<SpriteRenderer>().gameObject.SetActive(false);
+        GetComponentInChildren<ClienteServido>().GetComponentInChildren<SpriteRenderer>().gameObject.SetActive(false);
+        GetComponentInChildren<ClienteAtendido>().GetComponentInChildren<SpriteRenderer>().gameObject.SetActive(false);
+        GetComponentInChildren<ClienteFail>().GetComponentInChildren<SpriteRenderer>().gameObject.SetActive(false);
+
+        if (deboDestruirme || deboDestruirme2) Destroy(this.gameObject);
     }
 
     private void Start()
     {
-        //Elegir la bebida que pedirá el personaje
-        bebida =(Bebidas)Random.Range(1, GameManager.cantidadBebidas);
-        Debug.Log("Voy a pedir " + bebida);
+
+        // Inicializar comportamiento
+        bebida = (Bebidas)Random.Range(1, GameManager.cantidadBebidas);
         auxVelocidad = velocidad;
         animator = GetComponent<Animator>();
-        //rgbd = GetComponent<Rigidbody2D>();
+
+        // Asignar posiciones de pedir y baile
         originalPosition = transform.position;
 
         rndmBailar = Random.Range(0, GameManager.zonasDeBaile.Length);
@@ -54,16 +79,14 @@ public class MovimientoCliente : MonoBehaviour{
         posicionBaile.y = transform.position.y;
         posicionBaile.z = transform.position.z;
 
-        rndm = Random.Range(0, GameManager.zonasDisponibles.Length);
-        while (GameManager.zonasOcupadas[rndm]) rndm = Random.Range(0, GameManager.zonasDisponibles.Length);
+        rndm = Random.Range(0, GameManager.zonasOcupadas.Length);
+        while (GameManager.zonasOcupadas[rndm]) rndm = Random.Range(0, GameManager.zonasOcupadas.Length);
         GameManager.zonasOcupadas[rndm] = true;
         target.x = GameManager.zonasDisponibles[rndm];
         target.y = transform.position.y;
         target.z = transform.position.z;
-        //if (!atendido) InvokeRepeating("pedir", pedirRate, pedirRate);
-        //InvokeRepeating("idle", idleRate, idleRate);
-        Debug.Log("voy a posicionarme");
-        //Invoke("irPosicion", 0.5f);
+
+        // El personaje va a la posición de baile
         StartCoroutine("bailar");
     }
 
@@ -193,53 +216,6 @@ public class MovimientoCliente : MonoBehaviour{
 			flip();
 			rebota = -rebota;
 		}
-	}
-
-	private void Mover()
-	{
-		
-		if (rebota > 0)
-		{
-			Debug.Log("voy palante");
-			this.GetComponent<Rigidbody2D>().velocity = new Vector2(velocidad, 0);
-		}
-		else 
-			if(rebota < 0)
-			{
-				Debug.Log("voy izquierda");
-				this.GetComponent<Rigidbody2D>().velocity = new Vector2(-velocidad, 0);
-			}
-		animator.SetFloat("speed", (this.GetComponent<Rigidbody2D>().velocity.x != 0) ? 1f : -1f); //Cambia de animacion
-		
-	}
-
-	/* private void pedir()
-	{
-		animator.SetBool("pedir", true);
-		velocidad = 0;
-		señal.SetActive(true); //Activa la señal
-		Debug.Log("He pasado a pedir");
-		if (atendido) pararPedir();
-	}
-
-	private void pararPedir()
-	{
-		Debug.Log("paro de pedir");
-		animator.SetBool("pedir", false);
-		velocidad = auxVelocidad;
-		señal.SetActive(false); //Desactiva la señal
-	} */
-
-	private void idle()
-	{
-		velocidad = 0;
-		Debug.Log("He pasado al idle");
-		Invoke("pararIdle", tiempoIdle);
-	}
-
-	 private void pararIdle()
-	{
-		velocidad = auxVelocidad;
 	}
 
 	private void flip()

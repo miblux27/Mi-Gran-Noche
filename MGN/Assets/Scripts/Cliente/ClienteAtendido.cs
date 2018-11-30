@@ -8,8 +8,9 @@ public class ClienteAtendido : MonoBehaviour {
 	public Bebidas Cocktail;
 	public Bebidas Cerveza;
 	public Bebidas Chupito;
-	// Update is called once per frame
-	void Update () 
+
+    // Update is called once per frame
+    void Update () 
 	{
 		Vector3 dir = Target.position - transform.position;
 		if(aparece)

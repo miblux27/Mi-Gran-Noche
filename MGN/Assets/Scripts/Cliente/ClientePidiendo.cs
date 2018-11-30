@@ -11,7 +11,7 @@ public class ClientePidiendo : MonoBehaviour {
 	void Start()
 	{
 		posOriginal = transform.position.x;
-	}
+    }
 
 	// Update is called once per frame
 	void FixedUpdate () 
