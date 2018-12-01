@@ -92,7 +92,7 @@ public class MovimientoCliente : MovimientoNPCs {
     {
 
         // Inicializar comportamiento
-        bebida = (Bebidas)Random.Range(1, GameManager.cantidadBebidas);
+        bebida = (Bebidas)Random.Range(1, GameManager.cantidadBebidas+1);
         auxVelocidad = velocidad;
         animator = GetComponent<Animator>();
 
