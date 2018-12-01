@@ -83,6 +83,9 @@ public class CharacterController2D : MonoBehaviour
         if (isGrounded) animator.SetBool("grounded", true);
         else animator.SetBool("grounded", false);
 
+        if (ralentizar) animator.SetBool("ralentizado", true);
+        else animator.SetBool("ralentizado", false);
+
         moveInput = Input.GetAxis("Horizontal");
 
         if (Input.GetKeyDown(KeyCode.LeftControl) && time > cooldownTime)

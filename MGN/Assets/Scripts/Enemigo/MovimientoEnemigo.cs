@@ -14,26 +14,19 @@ public class MovimientoEnemigo : MovimientoNPCs
     private Vector3 minRange;
     private Vector3 maxRange;
 
-    private int planta;
-
     private Animator animator;
 
     // Use this for initialization
     void Start()
     {
-        planta = Random.Range(0, 1);
 
-        switch (planta) {
-            case 0:
-                minRangeX = GameManager.rangoMinP0;
-                maxRangeX = GameManager.rangoMaxP0;
-                break;
-            case 1:
-                minRangeX = GameManager.rangoMinP1;
-                maxRangeX = GameManager.rangoMaxP1;
-                break;
-            default:
-                break;
+        if (transform.position.y < 3) {
+            minRangeX = GameManager.rangoMinP0;
+            maxRangeX = GameManager.rangoMaxP0;
+        }
+        else if (transform.position.y < 10) {
+            minRangeX = GameManager.rangoMinP1;
+            maxRangeX = GameManager.rangoMaxP1;
         }
 
         minRange.x = minRangeX;

@@ -25,7 +25,6 @@ public class MovimientoCliente : MovimientoNPCs {
 
     // Parámetros auxiliares
     private float auxVelocidad;
-    private int planta;
     private float[] zonasPedir;
     private bool[] zonasPedirb;
     private float[] zonasBaile;
@@ -36,23 +35,19 @@ public class MovimientoCliente : MovimientoNPCs {
     // Nada más aparece en la escena, sin cargar ni siquiera los sprites
     private void Awake()
     {
-        planta = Random.Range(0, 1);
 
-        switch (planta) {
-            case 0:
-                zonasPedir = GameManager.zonasPedirP0;
-                zonasPedirb = GameManager.zonasPedirP0b;
-                zonasBaile = GameManager.zonasBaileP0;
-                zonasBaileb = GameManager.zonasBaileP0b;
-                break;
-            case 1:
-                zonasPedir = GameManager.zonasPedirP1;
-                zonasPedirb = GameManager.zonasPedirP1b;
-                zonasBaile = GameManager.zonasBaileP1;
-                zonasBaileb = GameManager.zonasBaileP1b;
-                break;
-            default:
-                break;
+        if (transform.position.y < 3)
+        {
+            zonasPedir = GameManager.zonasPedirP0;
+            zonasPedirb = GameManager.zonasPedirP0b;
+            zonasBaile = GameManager.zonasBaileP0;
+            zonasBaileb = GameManager.zonasBaileP0b;
+        }
+        else if (transform.position.y < 10) {
+            zonasPedir = GameManager.zonasPedirP1;
+            zonasPedirb = GameManager.zonasPedirP1b;
+            zonasBaile = GameManager.zonasBaileP1;
+            zonasBaileb = GameManager.zonasBaileP1b;
         }
 
         deboDestruirme = true;
