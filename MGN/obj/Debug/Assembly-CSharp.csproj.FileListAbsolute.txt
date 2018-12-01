@@ -496,7 +496,6 @@ C:\Users\migue\OneDrive\Documentos\GitHub\Mi-Gran-Noche\MGN\Temp\bin\Debug\Unity
 C:\Users\migue\OneDrive\Documentos\GitHub\Mi-Gran-Noche\MGN\Temp\bin\Debug\UnityEngine.GoogleAudioSpatializer.xml
 C:\Users\migue\OneDrive\Documentos\GitHub\Mi-Gran-Noche\MGN\Temp\bin\Debug\UnityEngine.HoloLens.xml
 C:\Users\migue\OneDrive\Documentos\GitHub\Mi-Gran-Noche\MGN\Temp\bin\Debug\UnityEngine.SpatialTracking.xml
-C:\Users\migue\OneDrive\Documentos\GitHub\Mi-Gran-Noche\MGN\obj\Debug\Assembly-CSharp.csprojAssemblyReference.cache
 C:\Users\migue\OneDrive\Documentos\GitHub\Mi-Gran-Noche\MGN\obj\Debug\Assembly-CSharp.csproj.CoreCompileInputs.cache
 C:\Users\migue\OneDrive\Documentos\GitHub\Mi-Gran-Noche\MGN\obj\Debug\Assembly-CSharp.csproj.CopyComplete
 C:\Users\migue\OneDrive\Documentos\GitHub\Mi-Gran-Noche\MGN\obj\Debug\Assembly-CSharp.dll
@@ -672,3 +671,4 @@ C:\Users\JESUS\Documents\Mi-Gran-Noche\MGN\Temp\bin\Debug\UnityEditor.UI.dll
 C:\Users\JESUS\Documents\Mi-Gran-Noche\MGN\Temp\bin\Debug\UnityEditor.UI.xml
 C:\Users\migue\OneDrive\Documentos\GitHub\Mi-Gran-Noche\MGN\Temp\bin\Debug\UnityEditor.UI.dll
 C:\Users\migue\OneDrive\Documentos\GitHub\Mi-Gran-Noche\MGN\Temp\bin\Debug\UnityEditor.UI.xml
+C:\Users\migue\OneDrive\Documentos\GitHub\Mi-Gran-Noche\MGN\obj\Debug\Assembly-CSharp.csprojAssemblyReference.cache

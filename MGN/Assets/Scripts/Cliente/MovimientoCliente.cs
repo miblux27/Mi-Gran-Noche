@@ -25,16 +25,40 @@ public class MovimientoCliente : MovimientoNPCs {
 
     // Parámetros auxiliares
     private float auxVelocidad;
+    private int planta;
+    private float[] zonasPedir;
+    private bool[] zonasPedirb;
+    private float[] zonasBaile;
+    private bool[] zonasBaileb;
     private bool deboDestruirme;
     private bool deboDestruirme2;
 	
     // Nada más aparece en la escena, sin cargar ni siquiera los sprites
     private void Awake()
     {
+        planta = Random.Range(0, 1);
+
+        switch (planta) {
+            case 0:
+                zonasPedir = GameManager.zonasPedirP0;
+                zonasPedirb = GameManager.zonasPedirP0b;
+                zonasBaile = GameManager.zonasBaileP0;
+                zonasBaileb = GameManager.zonasBaileP0b;
+                break;
+            case 1:
+                zonasPedir = GameManager.zonasPedirP1;
+                zonasPedirb = GameManager.zonasPedirP1b;
+                zonasBaile = GameManager.zonasBaileP1;
+                zonasBaileb = GameManager.zonasBaileP1b;
+                break;
+            default:
+                break;
+        }
+
         deboDestruirme = true;
-        for (int i = 0; i < GameManager.zonasDeBaileOcupadas.Length; i++)
+        for (int i = 0; i < zonasBaileb.Length; i++)
         {
-            if (!GameManager.zonasDeBaileOcupadas[i])
+            if (!zonasBaileb[i])
             {
                 deboDestruirme = false;
                 break;
@@ -42,9 +66,9 @@ public class MovimientoCliente : MovimientoNPCs {
         }
 
         deboDestruirme2 = true;
-        for (int i = 0; i < GameManager.zonasOcupadas.Length; i++)
+        for (int i = 0; i < zonasPedirb.Length; i++)
         {
-            if (!GameManager.zonasOcupadas[i])
+            if (!zonasPedirb[i])
             {
                 deboDestruirme2 = false;
                 break;
@@ -75,17 +99,17 @@ public class MovimientoCliente : MovimientoNPCs {
         // Asignar posiciones de pedir y baile
         originalPosition = transform.position;
 
-        rndmBailar = Random.Range(0, GameManager.zonasDeBaile.Length);
-        while (GameManager.zonasDeBaileOcupadas[rndmBailar]) rndmBailar = Random.Range(0, GameManager.zonasDeBaile.Length);
-        GameManager.zonasDeBaileOcupadas[rndmBailar] = true;
-        posicionBaile.x = GameManager.zonasDeBaile[rndmBailar];
+        rndmBailar = Random.Range(0, zonasBaile.Length);
+        while (zonasBaileb[rndmBailar]) rndmBailar = Random.Range(0, zonasBaile.Length);
+        zonasBaileb[rndmBailar] = true;
+        posicionBaile.x = zonasBaile[rndmBailar];
         posicionBaile.y = transform.position.y;
         posicionBaile.z = transform.position.z;
 
-        rndm = Random.Range(0, GameManager.zonasOcupadas.Length);
-        while (GameManager.zonasOcupadas[rndm]) rndm = Random.Range(0, GameManager.zonasOcupadas.Length);
-        GameManager.zonasOcupadas[rndm] = true;
-        target.x = GameManager.zonasDisponibles[rndm];
+        rndm = Random.Range(0, zonasPedirb.Length);
+        while (zonasPedirb[rndm]) rndm = Random.Range(0, zonasPedirb.Length);
+        zonasPedirb[rndm] = true;
+        target.x = zonasPedir[rndm];
         target.y = transform.position.y;
         target.z = transform.position.z;
 
@@ -103,7 +127,7 @@ public class MovimientoCliente : MovimientoNPCs {
             yield return new WaitForSeconds(Time.deltaTime);
         }
         Debug.Log("ya he ido a mi posición de baile");
-        for (int i = 0; i < GameManager.zonasDeBaile.Length; i++)
+        for (int i = 0; i < zonasBaile.Length; i++)
         {
             yield return new WaitForSeconds(2.0f);
             flip();
@@ -114,7 +138,7 @@ public class MovimientoCliente : MovimientoNPCs {
     }
 
     public IEnumerator irPosicion() {
-        GameManager.zonasDeBaileOcupadas[rndmBailar] = false;
+        zonasBaileb[rndmBailar] = false;
         if (transform.position.x > target.x && mirandoDerecha) flip();
         else if (transform.position.x < target.x && !mirandoDerecha) flip();
         while (transform.position != target)
@@ -188,7 +212,7 @@ public class MovimientoCliente : MovimientoNPCs {
     }
 
     private IEnumerator abandonarLocal() {
-        GameManager.zonasOcupadas[rndm] = false;
+        zonasPedirb[rndm] = false;
         if (transform.position.x > originalPosition.x && mirandoDerecha) flip();
         else if (transform.position.x < originalPosition.x && !mirandoDerecha) flip();
         while (transform.position != originalPosition)

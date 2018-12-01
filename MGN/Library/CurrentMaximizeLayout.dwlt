@@ -20,10 +20,10 @@ MonoBehaviour:
     y: 30
     width: 1366
     height: 675
-  m_MinSize: {x: 583, y: 492}
-  m_MaxSize: {x: 14004, y: 14042}
+  m_MinSize: {x: 581, y: 471}
+  m_MaxSize: {x: 14000, y: 14021}
   vertical: 0
-  controlID: 6552
+  controlID: 759
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -123,10 +123,10 @@ MonoBehaviour:
     y: 0
     width: 973
     height: 675
-  m_MinSize: {x: 306, y: 492}
-  m_MaxSize: {x: 10002, y: 14042}
+  m_MinSize: {x: 306, y: 471}
+  m_MaxSize: {x: 10000, y: 14021}
   vertical: 1
-  controlID: 6553
+  controlID: 760
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -150,7 +150,7 @@ MonoBehaviour:
   m_MinSize: {x: 306, y: 221}
   m_MaxSize: {x: 8006, y: 4021}
   vertical: 0
-  controlID: 6554
+  controlID: 728
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -203,9 +203,9 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 1a080000
+    m_SelectedIDs: 8a0e0000
     m_LastClickedID: 0
-    m_ExpandedIDs: dc3affffe43affff98afffff9aafffff9cafffff9eafffffa0afffffa2afffffe4fbffff00000000
+    m_ExpandedIDs: e4fbffff00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -441,8 +441,12 @@ MonoBehaviour:
       e32: 0
       e33: 1
   m_PreviewAnimator: {fileID: 0}
-  m_AnimatorController: {fileID: 0}
-  m_BreadCrumbs: []
+  m_AnimatorController: {fileID: 9100000, guid: a5e4221af007b0a499d98471d8c455cb,
+    type: 2}
+  m_BreadCrumbs:
+  - m_Target: {fileID: 1107062338857291464, guid: a5e4221af007b0a499d98471d8c455cb,
+      type: 2}
+    m_ScrollPosition: {x: 0, y: 0}
   stateMachineGraph: {fileID: 0}
   stateMachineGraphGUI: {fileID: 0}
   blendTreeGraph: {fileID: 0}
@@ -472,8 +476,8 @@ MonoBehaviour:
     y: 388
     width: 973
     height: 287
-  m_MinSize: {x: 232, y: 271}
-  m_MaxSize: {x: 10002, y: 10021}
+  m_MinSize: {x: 230, y: 250}
+  m_MaxSize: {x: 10000, y: 10000}
   m_ActualView: {fileID: 12}
   m_Panes:
   - {fileID: 12}
@@ -519,20 +523,20 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts/Enemigo
+    - Assets/Prefabs
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scripts/Enemigo
+  - Assets/Prefabs
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\migue\OneDrive\Documentos\GitHub\Mi-Gran-Noche\MGN
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 87}
-    m_SelectedIDs: 0e100000
-    m_LastClickedID: 4110
-    m_ExpandedIDs: 00000000400c00002a0d0000960d0000f20e0000ce0f0000
+    m_SelectedIDs: 2a100000
+    m_LastClickedID: 4138
+    m_ExpandedIDs: 00000000420c00002c0d0000980d0000f40e0000d00f0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -560,7 +564,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000400c00002a0d0000960d0000f20e0000ce0f0000
+    m_ExpandedIDs: 00000000420c00002c0d0000980d0000f40e0000d00f0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -585,9 +589,9 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 1a080000
-    m_LastClickedInstanceID: 2074
-    m_HadKeyboardFocusLastEvent: 0
+    m_SelectedInstanceIDs: 8a0e0000
+    m_LastClickedInstanceID: 3722
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: 0e3000006a350000b6330000a00e0000040d00006a37000000000000623700007c3300003238000046350000243300009631000020350000d8330000b80d0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -668,7 +672,7 @@ MonoBehaviour:
   m_AnimEditor: {fileID: 0}
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 4346
+  m_LastSelectedObjectID: 4350
 --- !u!114 &15
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -1019,8 +1023,8 @@ MonoBehaviour:
     y: 0
     width: 393
     height: 675
-  m_MinSize: {x: 277, y: 71}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 17}
   m_Panes:
   - {fileID: 17}

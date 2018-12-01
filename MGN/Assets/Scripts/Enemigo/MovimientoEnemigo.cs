@@ -8,15 +8,32 @@ public class MovimientoEnemigo : MovimientoNPCs
     public float velocidad = 0.0f;
     private float primeraVelocidad;
 
-    public float minRangeX;
-    public float maxRangeX;
+    private float minRangeX;
+    private float maxRangeX;
 
     private Vector3 minRange;
     private Vector3 maxRange;
 
+    private int planta;
+
     // Use this for initialization
     void Start()
     {
+        planta = Random.Range(0, 1);
+
+        switch (planta) {
+            case 0:
+                minRangeX = GameManager.rangoMinP0;
+                maxRangeX = GameManager.rangoMaxP0;
+                break;
+            case 1:
+                minRangeX = GameManager.rangoMinP1;
+                maxRangeX = GameManager.rangoMaxP1;
+                break;
+            default:
+                break;
+        }
+
         minRange.x = minRangeX;
         maxRange.x = maxRangeX;
 
