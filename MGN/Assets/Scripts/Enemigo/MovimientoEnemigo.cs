@@ -16,6 +16,8 @@ public class MovimientoEnemigo : MovimientoNPCs
 
     private int planta;
 
+    private Animator animator;
+
     // Use this for initialization
     void Start()
     {
@@ -41,6 +43,8 @@ public class MovimientoEnemigo : MovimientoNPCs
         minRange.z = transform.position.z;
         maxRange.y = transform.position.y;
         maxRange.z = transform.position.z;
+
+        animator = GetComponent<Animator>();
 
         primeraVelocidad = velocidad;
         InvokeRepeating("accion", 10.0f, 15.0f);
@@ -71,12 +75,14 @@ public class MovimientoEnemigo : MovimientoNPCs
 
     private void accion()
     {
+        animator.SetBool("accion", true);
         velocidad = 0.0f;
         Invoke("movimiento", 8.0f);
     }
 
     private void movimiento()
     {
+        animator.SetBool("accion", false);
         velocidad = primeraVelocidad;
     }
 }
