@@ -9,12 +9,6 @@ TagManager:
   - Cliente
   - Punto
   - "Se\xF1al"
-  - BarraCocktail
-  - BarraChupito
-  - BarraCerveza
-  - Chupito
-  - Cerveza
-  - Cocktail
   - DataBase
   - slot
   layers:
