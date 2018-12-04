@@ -21,7 +21,7 @@ public class MovimientoCliente : MovimientoNPCs {
     private Rigidbody2D rgbd;
     public bool atendido = false; //No se le ha cogido nota al cliente
     public bool servido = false; //No se le ha servido lo que pide al cliente
-    public Bebidas bebida;
+    public Bebida bebida;
 
     // Parámetros auxiliares
     private float auxVelocidad;
@@ -87,7 +87,7 @@ public class MovimientoCliente : MovimientoNPCs {
     {
 
         // Inicializar comportamiento
-        bebida = (Bebidas)Random.Range(1, GameManager.cantidadBebidas+1);
+        //bebida = (Bebidas)Random.Range(1, GameManager.cantidadBebidas+1);
         auxVelocidad = velocidad;
         animator = GetComponent<Animator>();
 

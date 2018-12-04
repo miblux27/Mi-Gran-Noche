@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4182018781975398}
   - component: {fileID: 212519976713049280}
   - component: {fileID: 61669234772273098}
-  - component: {fileID: 95835708484731874}
+  - component: {fileID: 95231472280720930}
   m_Layer: 10
   m_Name: grupoGente
   m_TagString: EnemigoGrupo
@@ -35,9 +35,9 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1694370589029732}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.46, y: 6.281, z: 0.1986126}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 11.124, y: -3.358, z: 0.19861269}
+  m_LocalScale: {x: 0.848177, y: 0.84056497, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -54,20 +54,20 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.049158335, y: -0.65711737}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 6.27, y: 3.67}
+    oldSize: {x: 5.9714284, y: 3.4952383}
     newSize: {x: 12.54, y: 7.34}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4.67, y: 2.09}
+  m_Size: {x: 4.9425015, y: 2.1073961}
   m_EdgeRadius: 0
---- !u!95 &95835708484731874
+--- !u!95 &95231472280720930
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 1
@@ -76,7 +76,7 @@ Animator:
   m_GameObject: {fileID: 1694370589029732}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 05c6500de752c5e4baf1f330f1d8ead6, type: 2}
+  m_Controller: {fileID: 9100000, guid: 4f1680e95cf9632468bafc3d60287d0d, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

@@ -28,6 +28,6 @@ public static class GameManager
     public static float rangoMinP0 = 0.09f;
     public static float rangoMaxP0 = 13.72f;
 
-    public static float rangoMinP1 = -21.53f;
-    public static float rangoMaxP1 = -5.54f;
+    public static float rangoMinP1 = 0.09f;
+    public static float rangoMaxP1 = 7.47f;
 }

@@ -4,16 +4,13 @@ using UnityEngine;
 
 public class ClienteAtendido : MonoBehaviour {
 	public Transform Target;
-	public bool aparece;
-	public Bebidas Cocktail;
-	public Bebidas Cerveza;
-	public Bebidas Chupito;
+    public bool aparece;
 
     // Update is called once per frame
     void Update () 
 	{
 		Vector3 dir = Target.position - transform.position;
-		if(aparece)
+		/*if(aparece)
 		{
 			foreach(Transform child in transform)
 				if(Target.GetComponent<MovimientoCliente>().bebida == Cocktail && child.CompareTag("Cocktail"))
@@ -29,7 +26,7 @@ public class ClienteAtendido : MonoBehaviour {
 					child.gameObject.SetActive(true);
 				}
 		} 
-		else  SetChildrenActive(false);
+		else  SetChildrenActive(false);*/
 		//if(transform.localScale.x < 1) this.GetComponent<MovimientoCliente>().flip();
 	}
 

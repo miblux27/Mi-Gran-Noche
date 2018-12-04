@@ -15,7 +15,6 @@ public class CharacterController2D : MonoBehaviour
     public Transform groundCheck;
     public float checkRadius;
     public LayerMask whatIsGround;
-    public GameObject cocktails, chupitos, cervezas;
     private int saltosActuales;
     private float moveInput;
     private float slideTime;
@@ -29,7 +28,7 @@ public class CharacterController2D : MonoBehaviour
     private bool isGrounded;
     private bool slideActivado = false;
 
-    private const float bajarVelovidad = 0.4f;
+    private const float bajarVelovidad = 0.8f;
     private const float slideSpeed = 10f;
     private const float slideLimit = 2f;
 
@@ -44,10 +43,6 @@ public class CharacterController2D : MonoBehaviour
         colliders = GetComponents<Collider2D>();
         particle = gameObject.GetComponentInChildren<ParticleSystem>();
         particle.Stop();
-
-        cocktails = GameObject.Find("cocktails");
-        chupitos = GameObject.Find("chupitos");
-        cervezas = GameObject.Find("cervezas");
     }
 
     private void Update()
@@ -56,24 +51,6 @@ public class CharacterController2D : MonoBehaviour
 
         Mover();
         if(!GameManager.juegoEnPausa) Saltar();
-
-        if (CharacterInteraction.NumCocktail <= 0)
-        {
-            cocktails.SetActive(false);
-        }
-        else { cocktails.SetActive(true); }
-
-        if (CharacterInteraction.NumChupito <= 0)
-        {
-            chupitos.SetActive(false); ;
-        }
-        else { chupitos.SetActive(true); }
-
-        if (CharacterInteraction.NumCerveza <= 0)
-        {
-            cervezas.SetActive(false); ;
-        }
-        else { cervezas.SetActive(true); }
     }
 
     private void Mover()
@@ -122,7 +99,8 @@ public class CharacterController2D : MonoBehaviour
         }
         else
         {
-            rgbd.velocity = (ralentizar) ? new Vector2(moveInput * speed * bajarVelovidad, rgbd.velocity.y) : new Vector2(moveInput * speed, rgbd.velocity.y);
+            float velocidadRalentizada = (moveInput * speed) - (moveInput * speed * bajarVelovidad);
+            rgbd.velocity = (ralentizar) ? new Vector2(velocidadRalentizada, rgbd.velocity.y) : new Vector2(moveInput * speed, rgbd.velocity.y);
         }
 
         animator.SetFloat("speed", (rgbd.velocity.x != 0) ? 1f : -1f);
@@ -169,7 +147,8 @@ public class CharacterController2D : MonoBehaviour
 
     private Vector2 VectorDeSalto()
     {
-        float salto = (ralentizar) ? bajarVelovidad * jumpForce : jumpForce;
+        float saltoRalentizado = (jumpForce) - (jumpForce * bajarVelovidad);
+        float salto = (ralentizar) ? saltoRalentizado : jumpForce;
         return Vector2.up * salto;
     }
 }

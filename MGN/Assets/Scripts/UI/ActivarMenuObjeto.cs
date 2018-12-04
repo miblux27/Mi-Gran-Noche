@@ -6,8 +6,7 @@ public class ActivarMenuObjeto : MonoBehaviour
 {
     public GameObject barra;
 
-    //Provisionalmente comentado
-    /* public void ActivarMenu()
+     public void ActivarMenu()
     {
         barra.SetActive(true);
         GameManager.juegoEnPausa = true;
@@ -18,5 +17,5 @@ public class ActivarMenuObjeto : MonoBehaviour
         barra.SetActive(false);
         GameManager.juegoEnPausa = false;
         Time.timeScale = 1f; 
-    } */
+    } 
 }

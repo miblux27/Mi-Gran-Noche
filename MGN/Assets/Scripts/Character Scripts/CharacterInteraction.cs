@@ -5,9 +5,14 @@ using UnityEngine;
 public class CharacterInteraction : MonoBehaviour {
 
     public CharacterController2D character;
-    public static int NumCocktail, NumChupito, NumCerveza;
     private GameObject Cliente;
-    
+    private CharacterData characterData;
+
+    private void Start()
+    {
+        characterData = transform.GetComponent<CharacterData>();
+    }
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -16,30 +21,12 @@ public class CharacterInteraction : MonoBehaviour {
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
-         if (CharacterData.bebidas.Count < 3)
-            {
-                if (Input.GetKeyDown(KeyCode.E) && collision.GetComponent<Collider2D>().CompareTag("BarraCocktail"))
-                {
-                    //Debug.Log("activado");
-                    //ActivarMenuObjeto barra = collision.GetComponent<ActivarMenuObjeto>();
-                    //barra.ActivarMenu();
-                    Debug.Log("Coger Cocktail");
-                    CharacterData.bebidas.Add(Bebidas.cocktail);
-                    NumCocktail++;
-                }
-                else if (Input.GetKeyDown(KeyCode.E) && collision.GetComponent<Collider2D>().CompareTag("BarraChupito"))
-                {
-                    Debug.Log("Coger Chupito");
-                    CharacterData.bebidas.Add(Bebidas.chupito);
-                    NumChupito++;
-                }
-                else if (Input.GetKeyDown(KeyCode.E) && collision.GetComponent<Collider2D>().CompareTag("BarraCerveza"))
-                {
-                    Debug.Log("Coger cerveza");
-                    CharacterData.bebidas.Add(Bebidas.cerveza);
-                    NumCerveza++;
-                }
-            }
+        if (Input.GetKeyDown(KeyCode.E) && collision.GetComponent<Collider2D>().CompareTag("Barra"))
+        {
+            ActivarMenuObjeto barra = collision.GetComponent<ActivarMenuObjeto>();
+            barra.ActivarMenu();
+        }
+
         if (Input.GetKeyDown(KeyCode.E) && collision.GetComponent<Collider2D>().CompareTag("Cliente"))
         {
             MovimientoCliente cliente = collision.GetComponent<MovimientoCliente>();
@@ -50,21 +37,11 @@ public class CharacterInteraction : MonoBehaviour {
             }
             else if (!cliente.servido)
             {
-                if (CharacterData.bebidas.Contains(cliente.bebida))
+                if (characterData.inventario.Contains(cliente.bebida))
                 {
-                    if (cliente.bebida == Bebidas.cocktail) {
-                        NumCocktail--;
-                    }
-                    if (cliente.bebida == Bebidas.chupito)
-                    {
-                        NumChupito--;
-                    }
-                    if (cliente.bebida == Bebidas.cerveza){
-                        NumCerveza--;
-                    }
                     
                     cliente.servido = true;
-                    CharacterData.bebidas.Remove(cliente.bebida);
+                    characterData.inventario.Remove(cliente.bebida);
                     Debug.Log("Cliente Servido");
                 }
             }
