@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aed73f62674a6d545997aa12f40aad0f, type: 3}
   m_Name: "Ca\xF1a"
   m_EditorClassIdentifier: 
-  itemName: 
+  itemName: "Ca\xF1a"
   itemID: 2
   icono: {fileID: 21300002, guid: c10ce3915a884274cb0e08a341970e50, type: 3}
   bebidaTipo: 3
