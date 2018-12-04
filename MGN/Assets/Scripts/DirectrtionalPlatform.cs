@@ -20,7 +20,7 @@ public class DirectrtionalPlatform : MonoBehaviour {
         if (Input.GetKey(KeyCode.S))
         {
             effector2D.rotationalOffset = 180f;
-            waitTime = 0.2f;
+            waitTime = 0.3f;
         }
         else if (waitTime > 0)
         {
