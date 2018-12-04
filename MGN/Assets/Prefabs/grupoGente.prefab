@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4182018781975398}
   - component: {fileID: 212519976713049280}
   - component: {fileID: 61669234772273098}
+  - component: {fileID: 95835708484731874}
   m_Layer: 10
   m_Name: grupoGente
   m_TagString: EnemigoGrupo
@@ -57,15 +58,33 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 7.1657143, y: 4.194286}
+    oldSize: {x: 6.27, y: 3.67}
     newSize: {x: 12.54, y: 7.34}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 5.51, y: 2.09}
+  m_Size: {x: 4.67, y: 2.09}
   m_EdgeRadius: 0
+--- !u!95 &95835708484731874
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1694370589029732}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 05c6500de752c5e4baf1f330f1d8ead6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!212 &212519976713049280
 SpriteRenderer:
   m_ObjectHideFlags: 1

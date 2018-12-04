@@ -23,6 +23,7 @@ public class MovimientoEnemigo : MovimientoNPCs
         if (transform.position.y < 3) {
             minRangeX = GameManager.rangoMinP0;
             maxRangeX = GameManager.rangoMaxP0;
+            flip();
         }
         else if (transform.position.y < 10) {
             minRangeX = GameManager.rangoMinP1;
@@ -41,8 +42,6 @@ public class MovimientoEnemigo : MovimientoNPCs
 
         primeraVelocidad = velocidad;
         InvokeRepeating("accion", 10.0f, 15.0f);
-
-        flip();
     }
 
     // Update is called once per frame
