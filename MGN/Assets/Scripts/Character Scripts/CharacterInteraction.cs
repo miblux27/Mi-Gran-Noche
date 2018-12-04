@@ -30,27 +30,27 @@ public class CharacterInteraction : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.E) && collision.GetComponent<Collider2D>().CompareTag("Cliente"))
         {
             MovimientoCliente cliente = collision.GetComponent<MovimientoCliente>();
-            if (!cliente.atendido)
+            if (cliente.disponible && !cliente.atendido)
             {
                 cliente.atendido = true;
                 cliente.GetComponentInChildren<ClientePidiendo>().aparece = false;
                 cliente.GetComponentInChildren<ClienteAtendido>().aparece = true;
                 Debug.Log("Cliente Atendido");
+                
             }
-            else if (!cliente.servido)
+            else if (cliente.disponible && cliente.atendido)
             {
-                /*if (characterData.inventario.Contains(cliente.bebida))
+                for (int i = 0; i < GameManager.cantidadBebidas; i++)
                 {
-                    
-                    cliente.servido = true;
-                    cliente.GetComponentInChildren<ClienteAtendido>().aparece = false;
-                    cliente.GetComponentInChildren<ClienteServido>().aparece = true;
-                    characterData.inventario.Remove(cliente.bebida);
-                    Debug.Log("Cliente Servido");
-                }*/
-                cliente.servido = true;
-                cliente.GetComponentInChildren<ClienteAtendido>().aparece = false;
-                cliente.GetComponentInChildren<ClienteServido>().aparece = true;
+                    if ((int)characterData.inventario[i].bebidaTipo == cliente.bebida)
+                    {
+                        characterData.removeBebida(characterData.inventario[i]);
+                        cliente.servido = true;
+                        cliente.GetComponentInChildren<ClienteAtendido>().aparece = false;
+                        cliente.GetComponentInChildren<ClienteServido>().aparece = true;
+                        break;
+                    }
+                }
             }
         }
     }

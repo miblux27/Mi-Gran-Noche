@@ -19,4 +19,8 @@ public class ActualizarInventario : MonoBehaviour
             else slotsImagen[i].GetComponentInChildren<Image>().sprite = characterData.inventario[i].icono;
         }
     }
+    public void Update()
+    {
+        actualizarInventario();
+    }
 }

@@ -21,6 +21,7 @@ public class MovimientoCliente : MovimientoNPCs {
     private Rigidbody2D rgbd;
     public bool atendido = false; //No se le ha cogido nota al cliente
     public bool servido = false; //No se le ha servido lo que pide al cliente
+    public bool disponible = false; //Ya estoy en la posición de pedir
     public int bebida;
 
     // Parámetros auxiliares
@@ -142,6 +143,7 @@ public class MovimientoCliente : MovimientoNPCs {
             yield return new WaitForSeconds(Time.deltaTime);
         }
         Debug.Log("estoy pidiendo");
+        disponible = true;
         GetComponentInChildren<ClientePidiendo>().aparece = true; // Aquí el cliente tiene que realizar el pedido
         StartCoroutine("timerCliente");
         StopCoroutine("irPosicion");
@@ -164,6 +166,7 @@ public class MovimientoCliente : MovimientoNPCs {
             yield return new WaitForSeconds(1.0f);
             Debug.Log("timer 1: " + tiempo);
         }
+        disponible = false;
         GetComponentInChildren<ClientePidiendo>().aparece = false;
         GetComponentInChildren<ClienteFail>().aparece = true;
         StartCoroutine("abandonarLocal");
@@ -198,6 +201,7 @@ public class MovimientoCliente : MovimientoNPCs {
             yield return new WaitForSeconds(1.0f);
             Debug.Log("timer 2: " + tiempo);
         }
+        disponible = false;
         GetComponentInChildren<ClienteAtendido>().aparece = false;
         GetComponentInChildren<ClienteFail>().aparece = true;
         StartCoroutine("abandonarLocal");
