@@ -21,7 +21,7 @@ public class MovimientoCliente : MovimientoNPCs {
     private Rigidbody2D rgbd;
     public bool atendido = false; //No se le ha cogido nota al cliente
     public bool servido = false; //No se le ha servido lo que pide al cliente
-    public Bebida bebida;
+    public int bebida;
 
     // Parámetros auxiliares
     private float auxVelocidad;
@@ -87,7 +87,7 @@ public class MovimientoCliente : MovimientoNPCs {
     {
 
         // Inicializar comportamiento
-        //bebida = (Bebidas)Random.Range(1, GameManager.cantidadBebidas+1);
+        bebida = Random.Range(1, GameManager.cantidadBebidas+1);
         auxVelocidad = velocidad;
         animator = GetComponent<Animator>();
 
@@ -156,8 +156,7 @@ public class MovimientoCliente : MovimientoNPCs {
             if (atendido) 
             {
                 Debug.Log("paso a decir lo que quiero");
-                GetComponentInChildren<ClientePidiendo>().aparece = false;
-                GetComponentInChildren<ClienteAtendido>().aparece = true;
+                
                 StartCoroutine("denegarComanda");
                 StopCoroutine("timerCliente");
             }
@@ -179,8 +178,7 @@ public class MovimientoCliente : MovimientoNPCs {
         {
             if (servido)
             {
-                GetComponentInChildren<ClienteAtendido>().aparece = false;
-                GetComponentInChildren<ClienteServido>().aparece = true;
+                
                 StartCoroutine("abandonarLocal");
                 StopCoroutine("denegarComanda");
             }

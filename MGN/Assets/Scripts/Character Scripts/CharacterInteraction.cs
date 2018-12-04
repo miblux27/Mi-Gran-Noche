@@ -33,17 +33,24 @@ public class CharacterInteraction : MonoBehaviour {
             if (!cliente.atendido)
             {
                 cliente.atendido = true;
+                cliente.GetComponentInChildren<ClientePidiendo>().aparece = false;
+                cliente.GetComponentInChildren<ClienteAtendido>().aparece = true;
                 Debug.Log("Cliente Atendido");
             }
             else if (!cliente.servido)
             {
-                if (characterData.inventario.Contains(cliente.bebida))
+                /*if (characterData.inventario.Contains(cliente.bebida))
                 {
                     
                     cliente.servido = true;
+                    cliente.GetComponentInChildren<ClienteAtendido>().aparece = false;
+                    cliente.GetComponentInChildren<ClienteServido>().aparece = true;
                     characterData.inventario.Remove(cliente.bebida);
                     Debug.Log("Cliente Servido");
-                }
+                }*/
+                cliente.servido = true;
+                cliente.GetComponentInChildren<ClienteAtendido>().aparece = false;
+                cliente.GetComponentInChildren<ClienteServido>().aparece = true;
             }
         }
     }
