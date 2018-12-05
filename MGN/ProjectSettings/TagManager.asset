@@ -11,6 +11,9 @@ TagManager:
   - "Se\xF1al"
   - DataBase
   - slot
+  - Chupito
+  - Cerveza
+  - Cocktail
   layers:
   - Default
   - TransparentFX
@@ -23,7 +26,7 @@ TagManager:
   - Ground
   - Personaje
   - Enemigos
-  - 
+  - Carteles
   - 
   - 
   - 
