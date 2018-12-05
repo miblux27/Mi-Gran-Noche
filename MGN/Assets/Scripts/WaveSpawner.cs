@@ -74,12 +74,10 @@ public class WaveSpawner : MonoBehaviour {
         {
             nextWave = 0;
             stopped = true;
-            Debug.Log("Spawn Parado");
         }
         else
         {
             nextWave++;
-            Debug.Log("Siguiente ronda");
         }
     }
 }

@@ -27,7 +27,7 @@ public class CharacterInteraction : MonoBehaviour {
             barra.ActivarMenu();
         }
 
-        if (Input.GetKeyDown(KeyCode.E) && collision.GetComponent<Collider2D>().CompareTag("Cliente"))
+        else if (Input.GetKeyDown(KeyCode.E) && collision.GetComponent<Collider2D>().CompareTag("Cliente"))
         {
             MovimientoCliente cliente = collision.GetComponent<MovimientoCliente>();
             if (cliente.disponible && !cliente.atendido)
@@ -40,17 +40,19 @@ public class CharacterInteraction : MonoBehaviour {
             }
             else if (cliente.disponible && cliente.atendido)
             {
-                for (int i = 0; i < GameManager.cantidadBebidas; i++)
+                for (int i = 0; i < characterData.inventario.Count; i++)
                 {
-                    if ((int)characterData.inventario[i].bebidaTipo == cliente.bebida)
+                    if (characterData.inventario[i] != null && (int)characterData.inventario[i].bebidaTipo == cliente.bebida)
                     {
-                        characterData.removeBebida(characterData.inventario[i]);
+                        characterData.inventario[i] = null;
                         cliente.servido = true;
                         cliente.GetComponentInChildren<ClienteAtendido>().aparece = false;
                         cliente.GetComponentInChildren<ClienteServido>().aparece = true;
+                        Debug.Log("Le he dado la bebida");
                         break;
                     }
                 }
+                Debug.Log("No he encontrado la bebida " + cliente.bebida);
             }
         }
     }
