@@ -7,6 +7,7 @@ public static class GameManager
     public static float tiempoDeJuego = 0f;
     public static bool juegoEnPausa = false;
     public static int cantidadBebidas = 3;
+    public static int CantidadDinero = 0;
 
     // Zonas de clientes
     public static float[] zonasPedirP0 = { -21.16f, -19.3f, -17.13f, -15.35f, -12.53f, -10.71f, -8.34f, -6.55f, 7.36f, 9.22f, 10.73f, 12.5f};

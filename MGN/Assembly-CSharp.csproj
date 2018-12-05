@@ -130,6 +130,7 @@
     <Compile Include="Assets\Cinemachine\Timeline\CinemachineMixer.cs" />
     <Compile Include="Assets\Cinemachine\Timeline\CinemachineShot.cs" />
     <Compile Include="Assets\Cinemachine\Timeline\CinemachineTrack.cs" />
+    <Compile Include="Assets\Scripts\ActualizarPuntuación.cs" />
     <Compile Include="Assets\Scripts\Bebida\Bebida.cs" />
     <Compile Include="Assets\Scripts\Bebida\BebidaDataBase.cs" />
     <Compile Include="Assets\Scripts\Bebida\ControlarSlot.cs" />

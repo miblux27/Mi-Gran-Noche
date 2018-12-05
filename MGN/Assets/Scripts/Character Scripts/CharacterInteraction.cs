@@ -44,10 +44,32 @@ public class CharacterInteraction : MonoBehaviour {
                 {
                     if (characterData.inventario[i] != null && (int)characterData.inventario[i].bebidaTipo == cliente.bebida)
                     {
+                        Bebida.BebidaTipo tipo = characterData.inventario[i].bebidaTipo;
                         characterData.inventario[i] = null;
                         cliente.servido = true;
                         cliente.GetComponentInChildren<ClienteAtendido>().aparece = false;
                         cliente.GetComponentInChildren<ClienteServido>().aparece = true;
+                        switch (cliente.bebida)
+                        {
+                            case (int)Bebida.BebidaTipo.cerveza:
+                                {
+                                    GameManager.CantidadDinero += 20;
+                                    Debug.Log("Tengo " + GameManager.CantidadDinero + " €");
+                                    break;
+                                }
+                            case (int)Bebida.BebidaTipo.chupito:
+                                {
+                                    GameManager.CantidadDinero += 50;
+                                    Debug.Log("Tengo " + GameManager.CantidadDinero + " €");
+                                    break;
+                                }
+                            case (int)Bebida.BebidaTipo.cocktail:
+                                {
+                                    GameManager.CantidadDinero += 30;
+                                    Debug.Log("Tengo " + GameManager.CantidadDinero + " €");
+                                    break;
+                                }
+                        }
                         Debug.Log("Le he dado la bebida");
                         break;
                     }
