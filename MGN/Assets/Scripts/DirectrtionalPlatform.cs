@@ -17,7 +17,7 @@ public class DirectrtionalPlatform : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        if (Input.GetKey(KeyCode.S))
+        if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
         {
             effector2D.rotationalOffset = 180f;
             waitTime = 0.3f;
