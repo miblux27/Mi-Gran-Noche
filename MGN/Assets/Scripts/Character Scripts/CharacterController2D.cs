@@ -50,7 +50,7 @@ public class CharacterController2D : MonoBehaviour
         time += Time.deltaTime;
 
         Mover();
-        if(!GameManager.juegoEnPausa) Saltar();
+        Saltar();
     }
 
     private void Mover()
