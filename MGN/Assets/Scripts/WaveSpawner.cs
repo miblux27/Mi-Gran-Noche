@@ -10,7 +10,7 @@ public class WaveSpawner : MonoBehaviour {
     public class Wave
     {
         public string name;
-        public Transform enemy;
+        public Transform [] enemy;
         public int count;
         public float rate;
         public float tiempoEntreOleadas = 5f;
@@ -61,9 +61,10 @@ public class WaveSpawner : MonoBehaviour {
         yield break;
     }
 
-    private void SpawnEnemy(Transform enemy)
+    private void SpawnEnemy(Transform [] enemy)
     {
-        Instantiate(enemy, transform.position, transform.rotation);
+        int enemyNumber = Random.Range(1, enemy.Length);
+        Instantiate(enemy[enemyNumber], transform.position, transform.rotation);
     }
 
     private void WaveCompleted()
