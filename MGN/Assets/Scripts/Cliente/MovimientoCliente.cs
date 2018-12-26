@@ -78,6 +78,16 @@ public class MovimientoCliente : MovimientoNPCs {
             child.gameObject.SetActive(false);
         }
 
+        foreach (Transform child in GetComponentInChildren<ClienteAtendido2>().transform)
+        {
+            child.gameObject.SetActive(false);
+        }
+
+        foreach (Transform child in GetComponentInChildren<ClienteAtendido3>().transform)
+        {
+            child.gameObject.SetActive(false);
+        }
+
         GetComponentInChildren<ClienteFail>().GetComponentInChildren<SpriteRenderer>().gameObject.SetActive(false);
 
         if (deboDestruirme || deboDestruirme2) Destroy(this.gameObject);
@@ -115,6 +125,7 @@ public class MovimientoCliente : MovimientoNPCs {
 
     public IEnumerator bailar()
     {
+        animator.SetBool("andar", true);
         if (transform.position.x > posicionBaile.x && mirandoDerecha) flip();
         else if (transform.position.x < posicionBaile.x && !mirandoDerecha) flip();
         while (transform.position != posicionBaile)
@@ -122,18 +133,20 @@ public class MovimientoCliente : MovimientoNPCs {
             transform.position = Vector3.MoveTowards(transform.position, posicionBaile, auxVelocidad * Time.deltaTime);
             yield return new WaitForSeconds(Time.deltaTime);
         }
+        animator.SetBool("andar", false);
+        animator.SetBool("bailar", true);
         Debug.Log("ya he ido a mi posición de baile");
         for (int i = 0; i < zonasBaile.Length; i++)
         {
             yield return new WaitForSeconds(2.0f);
-            flip();
         }
-
+        animator.SetBool("bailar", false);
         StartCoroutine("irPosicion");
         StopCoroutine("bailar");
     }
 
     public IEnumerator irPosicion() {
+        animator.SetBool("andar", true);
         zonasBaileb[rndmBailar] = false;
         if (transform.position.x > target.x && mirandoDerecha) flip();
         else if (transform.position.x < target.x && !mirandoDerecha) flip();
@@ -142,6 +155,8 @@ public class MovimientoCliente : MovimientoNPCs {
             transform.position = Vector3.MoveTowards(transform.position, target, auxVelocidad * Time.deltaTime);
             yield return new WaitForSeconds(Time.deltaTime);
         }
+        animator.SetBool("andar", false);
+        animator.SetBool("pedir", true);
         Debug.Log("estoy pidiendo");
         disponible = true;
         GetComponentInChildren<ClientePidiendo>().aparece = true; // Aquí el cliente tiene que realizar el pedido
@@ -157,8 +172,8 @@ public class MovimientoCliente : MovimientoNPCs {
         while (tiempo > 0) {
             if (atendido) 
             {
+                animator.SetBool("pedir", false);
                 Debug.Log("paso a decir lo que quiero");
-                
                 StartCoroutine("denegarComanda");
                 StopCoroutine("timerCliente");
             }
@@ -166,49 +181,60 @@ public class MovimientoCliente : MovimientoNPCs {
             yield return new WaitForSeconds(1.0f);
             Debug.Log("timer 1: " + tiempo);
         }
-        disponible = false;
-        GetComponentInChildren<ClientePidiendo>().aparece = false;
-        GetComponentInChildren<ClienteFail>().aparece = true;
-        StartCoroutine("abandonarLocal");
-        StopCoroutine("timerClientes");
+        if (!atendido){
+            animator.SetBool("pedir", false);
+            disponible = false;
+            GetComponentInChildren<ClientePidiendo>().aparece = false;
+            GetComponentInChildren<ClienteFail>().aparece = true;
+            StartCoroutine("abandonarLocal");
+            StopCoroutine("timerClientes");
+        }
     }
 
     public IEnumerator denegarComanda()
     {
         
-        int tiempo = 15;
+        int tiempo = 24;
         while (tiempo > 0)
-        {
-            if (servido)
+        {            
+            if (tiempo == 16 && !servido) 
             {
-                
-                StartCoroutine("abandonarLocal");
-                StopCoroutine("denegarComanda");
-            }
-           /*  else if (tiempo == 10) 
-            {
-                Debug.Log("me quedan 10 segundos");
+                Debug.Log("me quedan 16 segundos");
                 GetComponentInChildren<ClienteAtendido>().aparece = false;
                 GetComponentInChildren<ClienteAtendido2>().aparece = true;
             }
-            else if (tiempo == 5)
+            else if (tiempo == 8 && !servido)
             {
-                Debug.Log("me quedan 5 segundos");
+                Debug.Log("me quedan 8 segundos");
                 GetComponentInChildren<ClienteAtendido2>().aparece = false;
                 GetComponentInChildren<ClienteAtendido3>().aparece = true;
-            }*/
+            }
+
+            if (servido)
+            {
+                animator.SetBool("pedir", false);
+                StartCoroutine("abandonarLocal");
+                StopCoroutine("denegarComanda");
+            }
+
             tiempo -= 1;
             yield return new WaitForSeconds(1.0f);
             Debug.Log("timer 2: " + tiempo);
         }
-        disponible = false;
-        GetComponentInChildren<ClienteAtendido>().aparece = false;
-        GetComponentInChildren<ClienteFail>().aparece = true;
-        StartCoroutine("abandonarLocal");
-        StopCoroutine("denegarComanda");
+        if (disponible) {
+            animator.SetBool("pedir", false);
+            disponible = false;
+            GetComponentInChildren<ClienteAtendido>().aparece = false;
+            GetComponentInChildren<ClienteAtendido2>().aparece = false;
+            GetComponentInChildren<ClienteAtendido3>().aparece = false;
+            GetComponentInChildren<ClienteFail>().aparece = true;
+            StartCoroutine("abandonarLocal");
+            StopCoroutine("denegarComanda");
+        }
     }
 
     private IEnumerator abandonarLocal() {
+        animator.SetBool("andar", true);
         zonasPedirb[rndm] = false;
         if (transform.position.x > originalPosition.x && mirandoDerecha) flip();
         else if (transform.position.x < originalPosition.x && !mirandoDerecha) flip();

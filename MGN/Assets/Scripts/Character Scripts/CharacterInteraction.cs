@@ -44,10 +44,13 @@ public class CharacterInteraction : MonoBehaviour {
                 {
                     if (characterData.inventario[i] != null && (int)characterData.inventario[i].bebidaTipo == cliente.bebida)
                     {
+                        cliente.disponible = false;
                         Bebida.BebidaTipo tipo = characterData.inventario[i].bebidaTipo;
                         characterData.inventario[i] = null;
                         cliente.servido = true;
                         cliente.GetComponentInChildren<ClienteAtendido>().aparece = false;
+                        cliente.GetComponentInChildren<ClienteAtendido2>().aparece = false;
+                        cliente.GetComponentInChildren<ClienteAtendido3>().aparece = false;
                         cliente.GetComponentInChildren<ClienteServido>().aparece = true;
                         switch (cliente.bebida)
                         {
