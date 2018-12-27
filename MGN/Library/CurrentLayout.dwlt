@@ -114,7 +114,7 @@ MonoBehaviour:
   m_MinSize: {x: 683, y: 498}
   m_MaxSize: {x: 14004, y: 14048}
   vertical: 0
-  controlID: 3484
+  controlID: 8552
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -139,7 +139,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 498}
   m_MaxSize: {x: 10002, y: 14048}
   vertical: 1
-  controlID: 3452
+  controlID: 8655
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -164,7 +164,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 224}
   m_MaxSize: {x: 8006, y: 4024}
   vertical: 0
-  controlID: 3453
+  controlID: 8521
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -385,10 +385,10 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 5a160000
-      m_LastClickedID: 5722
-      m_ExpandedIDs: e2f8ffff6cfbffffd2fbffff
+      scrollPos: {x: 0, y: 693}
+      m_SelectedIDs: d4140000
+      m_LastClickedID: 5332
+      m_ExpandedIDs: 68c2ffffa8c5ffff5acaffffe2f8ffffd2fbfffff4130000c61400004c1600006e160000b616000022170000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -444,9 +444,9 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -5.382221, y: 4.966938, z: -6.6014194}
+    m_Target: {x: -0.7226484, y: 16.00817, z: 1.9957764}
     speed: 2
-    m_Value: {x: -5.382221, y: 4.966938, z: -6.6014194}
+    m_Value: {x: -0.7226484, y: 16.00817, z: 1.9957764}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -478,9 +478,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 23.921452
+    m_Target: 24.485178
     speed: 2
-    m_Value: 23.921452
+    m_Value: 24.485178
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -664,10 +664,10 @@ MonoBehaviour:
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 258}
+    scrollPos: {x: 0, y: 198}
     m_SelectedIDs: 74120000
     m_LastClickedID: 4724
-    m_ExpandedIDs: 00000000b60c00008c0e0000140f00005e10000096100000141100007011000078110000f21100000a12000074120000941200005039000052390000
+    m_ExpandedIDs: 00000000b60c0000460e00008c0e00005e10000096100000d8100000141100007011000078110000f21100000a1200007412000094120000183800001a380000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -695,7 +695,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000b60c00008c0e0000140f00005e10000096100000141100007011000078110000f21100000a12000074120000941200005039000052390000
+    m_ExpandedIDs: 00000000b60c0000460e00008c0e00005e10000096100000d8100000141100007011000078110000f21100000a1200007412000094120000183800001a380000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -723,7 +723,7 @@ MonoBehaviour:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 0
-    m_ExpandedInstanceIDs: 0e3000006a350000b6330000a00e0000040d00006a370000623700007c3300003238000046350000243300009631000020350000d8330000b80d0000a63200003c320000d0320000b2320000443200007c3500003848eeff5e340000563a0000c83400002e110000a0550000680d0000e2aafeff600e0000400d000000000000
+    m_ExpandedInstanceIDs: 0e3000006a350000b6330000a00e0000040d00006a370000623700007c3300003238000046350000243300009631000020350000d8330000b80d0000a63200003c320000d0320000b2320000443200007c3500003848eeff5e340000563a0000c83400002e110000a0550000e2aafeff600e0000400d000000000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -804,7 +804,7 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: -1174
+  m_LastSelectedObjectID: -14936
 --- !u!114 &20
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -1200,8 +1200,8 @@ MonoBehaviour:
     height: 615
   m_PersistentViewDataDictionary: {fileID: 0}
   m_ResetOnNextRepaint: 0
-  m_SelectedAssetPath: "Assets/Prefabs/se\xF1ales.png"
-  m_SelectedSpriteRectGUID: b3454c20c1eb51449991f9002a527c9f
+  m_SelectedAssetPath: Assets/Sprites/Fondo/ascensor/ascensor0.png
+  m_SelectedSpriteRectGUID: 1243d39d58b6f7c438ef235de4ed5ed5
   m_LastUsedModuleTypeName: 
 --- !u!114 &23
 MonoBehaviour:
