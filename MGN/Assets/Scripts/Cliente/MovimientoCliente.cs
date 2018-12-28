@@ -44,11 +44,18 @@ public class MovimientoCliente : MovimientoNPCs {
             zonasBaile = GameManager.zonasBaileP0;
             zonasBaileb = GameManager.zonasBaileP0b;
         }
-        else if (transform.position.y < 10) {
+        else if (transform.position.y < 10)
+        {
             zonasPedir = GameManager.zonasPedirP1;
             zonasPedirb = GameManager.zonasPedirP1b;
             zonasBaile = GameManager.zonasBaileP1;
             zonasBaileb = GameManager.zonasBaileP1b;
+        }
+        else {
+            zonasPedir = GameManager.zonasPedirP2;
+            zonasPedirb = GameManager.zonasPedirP2b;
+            zonasBaile = GameManager.zonasBaileP2;
+            zonasBaileb = GameManager.zonasBaileP2b;
         }
 
         deboDestruirme = true;
@@ -247,13 +254,5 @@ public class MovimientoCliente : MovimientoNPCs {
         StopCoroutine("abandonarLocal");
         yield break;
     }
-
-    /*private void OnTriggerEnter2D(Collider2D collision){
-		if(collision.GetComponent<Collider2D>().CompareTag("Punto")) //Cambia de direccion
-		{
-			flip();
-			rebota = -rebota;
-		}
-	}*/
 
 }

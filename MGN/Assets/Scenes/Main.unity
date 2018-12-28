@@ -2810,6 +2810,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -0.32
       objectReference: {fileID: 0}
+    - target: {fileID: 212929764781578164, guid: 697cc087d2855604a96b50d81191669a,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: -3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 697cc087d2855604a96b50d81191669a, type: 3}
 --- !u!1001 &398390329
@@ -3530,7 +3535,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingOrder: -3
   m_Sprite: {fileID: 21300000, guid: fdead836b71f89d4d973a3bbf39b44df, type: 3}
   m_Color: {r: 0.745283, g: 0.745283, b: 0.745283, a: 1}
   m_FlipX: 0
@@ -5726,6 +5731,11 @@ PrefabInstance:
         type: 3}
       propertyPath: waveCountdown
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 212929764781578164, guid: 697cc087d2855604a96b50d81191669a,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: -3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 697cc087d2855604a96b50d81191669a, type: 3}
@@ -10290,6 +10300,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -0.31
       objectReference: {fileID: 0}
+    - target: {fileID: 212929764781578164, guid: 697cc087d2855604a96b50d81191669a,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: -3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 697cc087d2855604a96b50d81191669a, type: 3}
 --- !u!224 &1567785745 stripped
@@ -14482,7 +14497,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingOrder: -3
   m_Sprite: {fileID: 21300000, guid: fdead836b71f89d4d973a3bbf39b44df, type: 3}
   m_Color: {r: 0.745283, g: 0.745283, b: 0.745283, a: 1}
   m_FlipX: 0

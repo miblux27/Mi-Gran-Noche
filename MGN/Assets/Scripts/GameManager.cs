@@ -20,10 +20,10 @@ public static class GameManager
     public static float[] zonasBaileP1 = { -11.87f, 2.14f, 10.77f, -21.62f};
     public static bool[] zonasBaileP1b = { false, false, false, false};
 
-    /*public static float[] zonasPedirP2 = { -11.9f, -10.2f, -8.0f, -6.16f, 2.36f, 3.21f, 4.12f, 4.97f };
+    public static float[] zonasPedirP2 = { -11.9f, -10.2f, -8.0f, -6.16f, 2.36f, 3.21f, 4.12f, 4.97f };
     public static bool[] zonasPedirP2b = { false, false, false, false, false, false, false, false };
     public static float[] zonasBaileP2 = { -13.4f, -4.78f, -0.79f };
-    public static bool[] zonasBaileP2b = { false, false, false };*/
+    public static bool[] zonasBaileP2b = { false, false, false };
 
     // Zonas de enemigos
     public static float rangoMinP0 = 0.09f;
