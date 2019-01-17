@@ -6,11 +6,11 @@ public class PantallaPuntuacion : MonoBehaviour
 {
     public void SalirAlMenu()
     {
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene(0);
     }
 
     public void ContinuarJuego()
     {
-        SceneManager.LoadScene("Main");
+        SceneManager.LoadScene(1);
     }
 }
