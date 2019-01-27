@@ -32,4 +32,11 @@ public class CharacterData : MonoBehaviour
     {
                 inventario[b] = null;
     }
+    public void removeAll()
+    {
+        for (int i = 0; i < inventario.Count; i++)
+        {
+            inventario[i] = null;
+        }
+    }
 }
