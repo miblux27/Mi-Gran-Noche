@@ -6,10 +6,7 @@ public class CervezaArma : MonoBehaviour
 {
     public GameObject particle;
     // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -19,7 +16,12 @@ public class CervezaArma : MonoBehaviour
 
         if (collision.transform.tag == "Player")
         {
-            collision.gameObject.GetComponent<CharacterData>().removeAll();
+            if (!collision.gameObject.GetComponent<CharacterInteraction>().golpeado)
+            {
+                collision.gameObject.GetComponent<CharacterInteraction>().golpeado = true;
+                collision.gameObject.GetComponent<CharacterData>().removeAll();
+            }
+            
         }
     }
 }

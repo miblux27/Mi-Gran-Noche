@@ -5,14 +5,27 @@ using UnityEngine;
 public class CharacterInteraction : MonoBehaviour {
 
     public CharacterController2D character;
+    public bool golpeado = false;
+
     private GameObject Cliente;
     private CharacterData characterData;
+
+    private SpriteRenderer spriteRenderer;
+    private int contador = 0;
+    private bool limiteColor = false;
 
     private void Start()
     {
         characterData = transform.GetComponent<CharacterData>();
+        spriteRenderer = transform.GetComponent<SpriteRenderer>();
     }
-
+    private void FixedUpdate()
+    {
+        if (golpeado)
+        {
+            tiempoInevencible();
+        }
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -84,5 +97,32 @@ public class CharacterInteraction : MonoBehaviour {
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.GetComponent<Collider2D>().CompareTag("EnemigoGrupo")) character.ralentizar = false;
+    }
+
+    public void tiempoInevencible()
+    {
+        float aux = .02f;
+        if (contador < 3)
+        {
+            if (!limiteColor)
+            {
+                spriteRenderer.color -= new Color(0, aux, aux, 0);
+                if (spriteRenderer.color.g < .65) limiteColor = true;
+            }
+            else
+            {
+                spriteRenderer.color += new Color(0, aux, aux, 0);
+                if (spriteRenderer.color.g == 1)
+                {
+                    limiteColor = false;
+                    contador++;
+                }
+            }
+        }
+        else
+        {
+            golpeado = false;
+            contador = 0;
+        }
     }
 }
