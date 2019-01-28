@@ -220,6 +220,7 @@ public class MovimientoCliente : MovimientoNPCs {
             if (servido)
             {
                 animator.SetBool("pedir", false);
+                AcabarNivel.instance.AtenderCliente();
                 StartCoroutine("abandonarLocal");
                 StopCoroutine("denegarComanda");
             }

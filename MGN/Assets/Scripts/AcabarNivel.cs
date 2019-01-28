@@ -5,18 +5,33 @@ using UnityEngine.SceneManagement;
 
 public class AcabarNivel : MonoBehaviour
 {
+    #region Singleton
+
+    public static AcabarNivel instance;
+
+    private void Awake()
+    {
+        instance = this;
+    }
+
+    #endregion
+
     private float tiempo;
+
+    private int clientesAtendidos = 0;
 
     void Start()
     {
+        clientesAtendidos = 0;
+
         int ronda = GameManager.jornada;
         if (ronda == 0)
         {
-            tiempo = 60.0f;
+            tiempo = 210.0f;
         }
         if (ronda >= 1)
         {
-            tiempo = 15.0f;
+            tiempo = 200.0f;
         }
     }
 
@@ -28,6 +43,17 @@ public class AcabarNivel : MonoBehaviour
             GameManager.jornada++;
             SceneManager.LoadScene(2);
         }
+    }
+
+    public int ClientesAtendidos ()
+    {
+        return clientesAtendidos;
+    }
+
+    public void AtenderCliente()
+    {
+        clientesAtendidos++;
+        Debug.Log("Clientes atendidos: " + clientesAtendidos);
     }
 
 }

@@ -3339,7 +3339,7 @@ PrefabInstance:
     - target: {fileID: 114111193821808146, guid: 697cc087d2855604a96b50d81191669a,
         type: 3}
       propertyPath: waves.Array.data[0].rate
-      value: 0.15
+      value: 0.04
       objectReference: {fileID: 0}
     - target: {fileID: 114111193821808146, guid: 697cc087d2855604a96b50d81191669a,
         type: 3}
@@ -3347,6 +3347,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5426097072664001145, guid: cf5419b71d36c7944b954d24f0ca3f71,
         type: 3}
+    - target: {fileID: 114111193821808146, guid: 697cc087d2855604a96b50d81191669a,
+        type: 3}
+      propertyPath: waveCountdown
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114111193821808146, guid: 697cc087d2855604a96b50d81191669a,
+        type: 3}
+      propertyPath: waves.Array.data[0].count
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 697cc087d2855604a96b50d81191669a, type: 3}
 --- !u!1001 &398390329
@@ -4618,7 +4628,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -21.494635, y: -1.320782, z: -20}
+  m_LocalPosition: {x: -21.470188, y: -1.320782, z: -20}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 108898261}
@@ -11971,12 +11981,12 @@ PrefabInstance:
     - target: {fileID: 114111193821808146, guid: 697cc087d2855604a96b50d81191669a,
         type: 3}
       propertyPath: waves.Array.data[0].count
-      value: 15
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 114111193821808146, guid: 697cc087d2855604a96b50d81191669a,
         type: 3}
       propertyPath: waveCountdown
-      value: 1
+      value: 150
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 697cc087d2855604a96b50d81191669a, type: 3}
@@ -17258,7 +17268,7 @@ PrefabInstance:
     - target: {fileID: 114111193821808146, guid: 697cc087d2855604a96b50d81191669a,
         type: 3}
       propertyPath: waves.Array.data[0].rate
-      value: 0.15
+      value: 0.06
       objectReference: {fileID: 0}
     - target: {fileID: 114111193821808146, guid: 697cc087d2855604a96b50d81191669a,
         type: 3}
@@ -17274,7 +17284,12 @@ PrefabInstance:
     - target: {fileID: 114111193821808146, guid: 697cc087d2855604a96b50d81191669a,
         type: 3}
       propertyPath: waveCountdown
-      value: 50
+      value: 65
+      objectReference: {fileID: 0}
+    - target: {fileID: 114111193821808146, guid: 697cc087d2855604a96b50d81191669a,
+        type: 3}
+      propertyPath: waves.Array.data[0].count
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 697cc087d2855604a96b50d81191669a, type: 3}

@@ -11,6 +11,9 @@ public static class GameManager
 
     public static int jornada = 0;
 
+    public static int clientesJornada0 = 10;
+    public static int clientesJornada1 = 10;
+
     // Zonas de clientes
     public static float[] zonasPedirP0 = { -21.16f, -19.3f, -17.13f, -15.35f, -12.53f, -10.71f, -8.34f, -6.55f, 7.36f, 9.22f, 10.73f, 12.5f};
     public static bool[] zonasPedirP0b = { false, false, false, false, false, false, false, false, false, false, false, false};
