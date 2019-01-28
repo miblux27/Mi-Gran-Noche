@@ -516,8 +516,8 @@ GameObject:
   m_Component:
   - component: {fileID: 329700456}
   - component: {fileID: 329700459}
-  - component: {fileID: 329700458}
   - component: {fileID: 329700457}
+  - component: {fileID: 329700458}
   m_Layer: 5
   m_Name: Button_Controls
   m_TagString: Untagged
@@ -541,8 +541,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -166.88, y: -44.8}
-  m_SizeDelta: {x: 159.44, y: 30}
+  m_AnchoredPosition: {x: -290, y: -62}
+  m_SizeDelta: {x: 151.8, y: 47.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &329700457
 MonoBehaviour:
@@ -564,8 +564,8 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0, g: 0, b: 0, a: 0.14117648}
-    m_HighlightedColor: {r: 0, g: 0, b: 0, a: 0.25882354}
+    m_NormalColor: {r: 0, g: 0, b: 0, a: 0.25882354}
+    m_HighlightedColor: {r: 0, g: 0, b: 0, a: 0.8235294}
     m_PressedColor: {r: 0, g: 0, b: 0, a: 0.46666667}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -661,7 +661,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 329700455}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
@@ -672,15 +672,20 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 40
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 4
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Controls
 --- !u!222 &329700459
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1465,15 +1470,15 @@ GameObject:
   m_Component:
   - component: {fileID: 957883044}
   - component: {fileID: 957883047}
-  - component: {fileID: 957883046}
   - component: {fileID: 957883045}
+  - component: {fileID: 957883046}
   m_Layer: 5
   m_Name: Button_Options
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &957883044
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1490,9 +1495,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 55.97, y: 32}
-  m_SizeDelta: {x: 88.24, y: 30}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 86, y: 35}
+  m_SizeDelta: {x: 77.4, y: 28.9}
+  m_Pivot: {x: 0.58507854, y: 0.65190375}
 --- !u!114 &957883045
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1513,9 +1518,9 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0, g: 0, b: 0, a: 0.14117648}
-    m_HighlightedColor: {r: 0, g: 0, b: 0, a: 0.25882354}
-    m_PressedColor: {r: 0, g: 0, b: 0, a: 0.46666667}
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 0.25882354}
+    m_PressedColor: {r: 1, g: 1, b: 1, a: 0.46666667}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -1566,7 +1571,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 957883043}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
@@ -1577,15 +1582,20 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 20
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 2
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Options
 --- !u!222 &957883047
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1877,7 +1887,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 88d586f82e2358148a44410e66b64963, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 44d4d50d92d76c942b7c1ff9f279fc17, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1978,8 +1988,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1428545152}
   - component: {fileID: 1428545155}
-  - component: {fileID: 1428545154}
   - component: {fileID: 1428545153}
+  - component: {fileID: 1428545154}
   m_Layer: 5
   m_Name: Button_Play
   m_TagString: Untagged
@@ -2003,8 +2013,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -227.66, y: 75.1}
-  m_SizeDelta: {x: 97.47, y: 30}
+  m_AnchoredPosition: {x: -289, y: 86}
+  m_SizeDelta: {x: 96.055, y: 50.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1428545153
 MonoBehaviour:
@@ -2026,8 +2036,8 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0, g: 0, b: 0, a: 0.14117648}
-    m_HighlightedColor: {r: 0, g: 0, b: 0, a: 0.25882354}
+    m_NormalColor: {r: 0, g: 0, b: 0, a: 0.31764707}
+    m_HighlightedColor: {r: 0, g: 0, b: 0, a: 0.7254902}
     m_PressedColor: {r: 0, g: 0, b: 0, a: 0.46666667}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -2068,7 +2078,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1428545151}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
@@ -2079,15 +2089,20 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 40
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Play
 --- !u!222 &1428545155
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2180,8 +2195,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1725786266}
   - component: {fileID: 1725786269}
-  - component: {fileID: 1725786268}
   - component: {fileID: 1725786267}
+  - component: {fileID: 1725786268}
   m_Layer: 5
   m_Name: Button_Quit
   m_TagString: Untagged
@@ -2205,8 +2220,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -221.27, y: -171.4}
-  m_SizeDelta: {x: 81.86, y: 30}
+  m_AnchoredPosition: {x: -259, y: -201}
+  m_SizeDelta: {x: 91.7, y: 50.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1725786267
 MonoBehaviour:
@@ -2228,8 +2243,8 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0, g: 0, b: 0, a: 0.14117648}
-    m_HighlightedColor: {r: 0, g: 0, b: 0, a: 0.25882354}
+    m_NormalColor: {r: 0, g: 0, b: 0, a: 0.29411766}
+    m_HighlightedColor: {r: 0, g: 0, b: 0, a: 0.8862745}
     m_PressedColor: {r: 0, g: 0, b: 0, a: 0.46666667}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -2270,7 +2285,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1725786265}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
@@ -2281,15 +2296,20 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 40
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 4
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Quit
 --- !u!222 &1725786269
 CanvasRenderer:
   m_ObjectHideFlags: 0
