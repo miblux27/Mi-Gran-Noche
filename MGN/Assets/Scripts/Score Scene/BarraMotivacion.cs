@@ -4,10 +4,14 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+
+
 public class BarraMotivacion : MonoBehaviour
 {
-    public Puntuacion puntuacion;
     public Image barraMotivacion;
+    public GameObject satisfechos;
+    public GameObject insatisfechos;
+
     float perdida;
     float fillAmountEstimado;
     public float fillAmountEstimadoSuma;
@@ -15,7 +19,8 @@ public class BarraMotivacion : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        perdida = (20 + puntuacion.clientesInsatisfechos) / 100;
+
+        perdida = Random.Range(0.05f, 0.15f);
         fillAmountEstimado = barraMotivacion.fillAmount-(barraMotivacion.fillAmount * perdida);
         sumado = false;
     }
