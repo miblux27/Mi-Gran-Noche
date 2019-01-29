@@ -27,11 +27,11 @@ public class AcabarNivel : MonoBehaviour
         int ronda = GameManager.jornada;
         if (ronda == 0)
         {
-            tiempo = 70.0f;
+            tiempo = 210f;
         }
         if (ronda >= 1)
         {
-            tiempo = 70.0f;
+            tiempo = 210f;
         }
     }
 
