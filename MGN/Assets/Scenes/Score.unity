@@ -376,6 +376,7 @@ GameObject:
   - component: {fileID: 290709744}
   - component: {fileID: 290709746}
   - component: {fileID: 290709745}
+  - component: {fileID: 290709747}
   m_Layer: 5
   m_Name: Barra_vida
   m_TagString: Untagged
@@ -427,7 +428,7 @@ MonoBehaviour:
   m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 1
-  m_FillAmount: 1
+  m_FillAmount: 0.989
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
@@ -439,6 +440,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 290709743}
   m_CullTransparentMesh: 0
+--- !u!114 &290709747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 290709743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abe3aa846a0c9d2449d66ec5140a9ec4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &393376234
 GameObject:
   m_ObjectHideFlags: 0

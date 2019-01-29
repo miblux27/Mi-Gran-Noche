@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Puntuacion : MonoBehaviour
 {
-    private int clientesAtendidos;
-    private int clientesInsatisfechos;
+    public int clientesAtendidos;
+    public int clientesInsatisfechos;
 
     private int clientesRonda;
 
