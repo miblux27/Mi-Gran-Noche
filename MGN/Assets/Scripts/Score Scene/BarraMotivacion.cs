@@ -13,13 +13,13 @@ public class BarraMotivacion : MonoBehaviour
     public GameObject insatisfechos;
 
     float perdida;
-    float fillAmountEstimado;
+    public float fillAmountEstimado;
     public float fillAmountEstimadoSuma;
-    bool sumado;
+    public bool sumado;
     // Start is called before the first frame update
     void Start()
     {
-
+        fillAmountEstimadoSuma = 0;
         perdida = Random.Range(0.05f, 0.15f);
         fillAmountEstimado = barraMotivacion.fillAmount-(barraMotivacion.fillAmount * perdida);
         sumado = false;
@@ -38,16 +38,9 @@ public class BarraMotivacion : MonoBehaviour
                 Debug.Log("Me salgo");
             }
         }
-        else if(barraMotivacion.fillAmount < fillAmountEstimadoSuma && barraMotivacion.fillAmount<=100){
+        else if(barraMotivacion.fillAmount < fillAmountEstimadoSuma && barraMotivacion.fillAmount<=100 && sumado){
             barraMotivacion.fillAmount += 0.01f;
         }
 
-    }
-
-
-    public void sumarMotivacion(float cantidad)
-    {
-        fillAmountEstimadoSuma = barraMotivacion.fillAmount + cantidad;
-        sumado = true;
     }
 }

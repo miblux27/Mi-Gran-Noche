@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class ActualizarPuntuación : MonoBehaviour {
 
-    private int score = 0;
+    public int score = 0;
     private Text dineroEnPantalla;
 
     private void Start()
